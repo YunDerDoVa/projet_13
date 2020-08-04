@@ -48,6 +48,6 @@ PyCharm
 **Backend**
 
 - Sentry (issues reports)
-- Travis (continuous integration
+- Travis (continuous integration)
 
 
