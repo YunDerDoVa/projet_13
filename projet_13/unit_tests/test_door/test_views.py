@@ -1,7 +1,6 @@
 from django.test import TestCase
 from django.urls import reverse
 
-
 from digitaltesttools.user import create_test_users
 
 
@@ -12,15 +11,15 @@ class DoorViewsTestCase(TestCase):
         self.test_users = create_test_users(3)
 
     def test_login_view(self):
-        url = reverse('login_view')
+        url = reverse('login')
         response = self.client.get(url)
 
-        self.assertTemplateUsed(response, 'door/base.html.django')
+        self.assertTemplateUsed(response, 'base.html.django')
         self.assertTemplateUsed(response, 'door/login.html.django')
 
     def test_register_view(self):
-        url = reverse('register_view')
+        url = reverse('register')
         response = self.client.get(url)
 
-        self.assertTemplateUsed(response, 'door/base.html.django')
+        self.assertTemplateUsed(response, 'base.html.django')
         self.assertTemplateUsed(response, 'door/register.html.django')
