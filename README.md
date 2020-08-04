@@ -17,3 +17,37 @@
 - [ ] library
   - [ ] tests
   - [ ] dev
+
+
+## Repository
+
+GitHub : https://github.com/GoswaTech/projet_13
+
+## IDE
+
+PyCharm
+
+## Website
+
+- link : *no link*
+- server : DigitalOcean
+- domain : *no domain*
+
+## Vendors
+
+### Anonymous
+
+- Frontend : BootStrap
+
+### Free
+
+**Frontend**
+
+- FontAwesom
+
+**Backend**
+
+- Sentry (issues reports)
+- Travis (continuous integration
+
+
