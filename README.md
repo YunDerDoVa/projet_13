@@ -1,19 +1,20 @@
 # Digital Art
 *Développez votre créativité digitale avec Digital Art !*
 
-## Avancement du plan de développement
-- [ ] door
-  - [x] tests
-  - [x] dev
-- [ ] hall
-  - [ ] tests
-  - [ ] dev
-- [ ] house
-  - [ ] tests
-  - [ ] dev
-- [ ] table
-  - [ ] tests
-  - [ ] dev
-- [ ] library
-  - [ ] tests
-  - [ ] dev
+## Avancement du plan de test
+- [ ] Unit Tests
+  - [x] door
+    - [x] views
+    - [x] models
+  - [ ] hall
+    - [ ] views
+    - [ ] models
+  - [ ] house
+    - [ ] views
+    - [ ] models
+  - [ ] table
+    - [ ] views
+    - [ ] models
+  - [ ] library
+    - [ ] views
+    - [ ] models
