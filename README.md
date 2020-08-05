@@ -6,15 +6,15 @@
   - [x] door
     - [x] views
     - [x] models
-  - [ ] hall
-    - [ ] views
-    - [ ] models
-  - [ ] house
-    - [ ] views
-    - [ ] models
+  - [x] hall
+    - [x] views
+    - [x] models (no model)
+  - [x] house
+    - [x] views
+    - [x] models (no model)
   - [ ] table
     - [ ] views
-    - [ ] models
+    - [ ] models **(WIP)**
   - [ ] library
     - [ ] views
     - [ ] models
