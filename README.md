@@ -13,7 +13,7 @@
     - [x] views
     - [x] models (no model)
   - [ ] table
-    - [ ] views
+    - [x] views
     - [ ] models **(WIP)**
   - [ ] library
     - [ ] views

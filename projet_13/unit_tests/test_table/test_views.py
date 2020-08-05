@@ -1,10 +1,10 @@
 from django.test import TestCase
+from django.urls import reverse
 
 from digitaltesttools.user import create_test_users
-from table.models import TablePost, TableLike
 
 
-class TableModelsTestCase(TestCase):
+class TableViewsTestCase(TestCase):
 
     POSTS = [
         ('title0', 'description', 'script.js', 'style.css', False),
@@ -30,23 +30,25 @@ class TableModelsTestCase(TestCase):
                 )
                 self.test_posts.append(post)
 
-    def test_table_post(self):
-        user = self.test_users[0]
-        post = TablePost.objects.filter(user=user).first()
+    def test_post_view(self):
+        post = self.test_posts[0]
+        url = reverse('table_post', kwargs={'post_id': post.id})
+        response = self.client.get(url)
 
-        self.assertEqual(post.user, user)
-        self.assertTrue(post.date_creation is not None)
-        self.assertTrue(post.date_last_update is not None)
-        self.assertEqual(post.number_of_likes, 0)
+        self.assertTemplateUsed(response, 'base.html.django')
+        self.assertTemplateUsed(response, 'table/post.html.django')
 
-    def test_add_like_function(self):
-        user_liked = self.test_users[0]
-        user_liker = self.test_users[1]
-        post = TablePost.objects.filter(user=user_liked).first()
+    def test_publish_view(self):
+        url = reverse('table_publish')
+        response = self.client.get(url)
 
-        post.add_like(user_liker, dislike=True)
+        self.assertTemplateUsed(response, 'base.html.django')
+        self.assertTemplateUsed(response, 'table/publish.html.django')
 
-        self.assertEqual(post.number_of_likes, 1)
-        self.assertEqual(post.like_set.count(), 1)
-        self.assertEqual(TableLike.objects.get(liker=user_liker, liked=user_liked, post=post), post.like_set.first())
-        self.assertFalse(post.like_set.first())
+    def test_edit_view(self):
+        post = self.test_posts[0]
+        url = reverse('table_edit', kwargs={'post_id': post.id})
+        response = self.client.get(url)
+
+        self.assertTemplateUsed(response, 'base.html.django')
+        self.assertTemplateUsed(response, 'table/edit.html.django')
