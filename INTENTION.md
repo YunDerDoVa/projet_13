@@ -1,0 +1,55 @@
+# Note d'Intention
+
+## I. Commencement du projet
+
+Ce projet trouve son inspiration dans le projet que j'ai appelé
+"crazyscript"
+(lien [ici](https://github.com/GoswaTech/crazyscript)). Son but
+était simplement de créer plusieurs background animés en
+JavaScript afin de laisser ces backgrounds à disposition des
+développeurs.
+
+## II. Inspirations
+
+J'ai beaucoup pris exemple sur les réseaux sociaux pour concevoir
+ce projet. Dans l'idée, j'ai remplacé les images de l'application
+instagram par la demo des scripts en action. J'ai ajouté un
+button 'dislike' afin de mieux trier la qualité des posts dans la
+vue d'accueil.
+
+## III. Projet_13
+
+### Le Post
+
+Chaque post sera, dans un premier temps, un script rattaché au
+code html `<div id="background"></div>`. Il y aura donc une
+seule catégorie de posts nommée **"DigitalBackground"**. Mais nous
+pouvons imaginer un développement afin de proposer des squelettes
+différents avec des rendus différents.
+
+#### Quelques idées de catégories
+- DigitalAnimation
+    - `<div id="text_box">Animated long text</div>`
+- DigitalButton
+    - `<button id="my_button">Crazy Button</button>`
+- DigitalCarousel
+    - `<div id="my_carousel"></carousel_images></div>`
+
+#### Librairie pour développeurs
+
+Les développeurs pourront ensuite prendre les scripts gratuits
+et libres de droits pour les intégrer à leur site. La
+documentation étant très simple car commune à tous les posts
+de chaque catégorie. Cela nécessite donc de créer une api.
+
+---
+
+### Les Principales Fonctionnalités
+
+- **Poster**/**Editer** Script
+- **Commenter** Post
+- **Aimer**/**Ne pas aimer** Post
+- **Visiter** Profile/Post
+- **Suivre** Profile
+- **Découvrir** Posts
+- **Editer** Compte
