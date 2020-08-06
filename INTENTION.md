@@ -19,7 +19,7 @@ vue d'accueil.
 
 ## III. Projet_13
 
-### Le Post
+### 1. Le Post
 
 Chaque post sera, dans un premier temps, un script rattaché au
 code html `<div id="background"></div>`. Il y aura donc une
@@ -27,7 +27,7 @@ seule catégorie de posts nommée **"DigitalBackground"**. Mais nous
 pouvons imaginer un développement afin de proposer des squelettes
 différents avec des rendus différents.
 
-#### Quelques idées de catégories
+#### 1. a. Quelques idées de catégories
 - DigitalAnimation
     - `<div id="text_box">Animated long text</div>`
 - DigitalButton
@@ -35,7 +35,7 @@ différents avec des rendus différents.
 - DigitalCarousel
     - `<div id="my_carousel"></carousel_images></div>`
 
-#### Librairie pour développeurs
+#### 1. b. Librairie pour développeurs
 
 Les développeurs pourront ensuite prendre les scripts gratuits
 et libres de droits pour les intégrer à leur site. La
@@ -44,7 +44,9 @@ de chaque catégorie. Cela nécessite donc de créer une api.
 
 ---
 
-### Les Principales Fonctionnalités
+### 2. Les Principales Fonctionnalités
+
+#### 2. a. Côté Web
 
 - **Poster**/**Editer** Script
 - **Commenter** Post
@@ -53,3 +55,9 @@ de chaque catégorie. Cela nécessite donc de créer une api.
 - **Suivre** Profile
 - **Découvrir** Posts
 - **Editer** Compte
+
+#### 2. b. Côté API
+
+- **Importer** les librairies publiques
+- **Lister** les librairies publiques
+- **Rechercher** une librairie publique
