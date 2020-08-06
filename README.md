@@ -12,9 +12,9 @@
   - [x] house
     - [x] views
     - [x] models (no model)
-  - [ ] table
+  - [x] table
     - [x] views
-    - [ ] models **(WIP)**
+    - [x] models
   - [ ] library
     - [ ] views
     - [ ] models
