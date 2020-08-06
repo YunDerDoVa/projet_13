@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'digitaltesttools.apps.DigitaltesttoolsConfig',
     'door.apps.DoorConfig',
     'hall.apps.HallConfig',
+    'house.apps.HouseConfig',
 ]
 
 MIDDLEWARE = [
