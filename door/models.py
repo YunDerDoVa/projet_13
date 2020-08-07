@@ -1,8 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
-from .managers import UserManager
-
 
 # Create your models here.
 class Privacy(models.Model):
@@ -19,4 +17,15 @@ class User(AbstractUser):
     banner = models.IntegerField(default=0)
     privacy_settings = models.OneToOneField(Privacy, on_delete=models.SET_NULL, null=True)
 
-    objects = UserManager()
+    @staticmethod
+    def register_new_user(username, email, password):
+        """ Create a user and all the attached tables.
+        Attached tables list :
+        - Privacy
+        - (Ergonomy)
+        - (Security) """
+
+        user = User.objects.create_user(username=username, email=email, password=password)
+        Privacy.objects.create(user=user)
+
+        return user
