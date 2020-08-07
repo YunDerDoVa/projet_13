@@ -1,5 +1,7 @@
 from django.db import models
-from django.contrib.auth.models import AbstractUser, UserManager
+from django.contrib.auth.models import AbstractUser
+
+from .managers import UserManager
 
 
 # Create your models here.
@@ -8,22 +10,6 @@ class Privacy(models.Model):
 
     private_profile = models.BooleanField(default=False)
     private_posts = models.BooleanField(default=False)
-
-
-class UserManager(UserManager):
-    """ Manager of User class. """
-
-    def register_new_user(self, username, email, password):
-        """ Create a user and all the attached tables.
-        Attached tables list :
-        - Privacy
-        - (Ergonomy)
-        - (Security) """
-
-        user = self.create_user(username=username, email=email, password=password)
-        Privacy.objects.create(user=user)
-
-        return user
 
 
 class User(AbstractUser):
