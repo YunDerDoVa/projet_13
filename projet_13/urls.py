@@ -23,4 +23,5 @@ urlpatterns = [
     path('library/', include('library.urls')),
     path('door/', include('door.urls')),
     path('', include('hall.urls')),
+    path('color/', include('color_tool.urls')),
 ]

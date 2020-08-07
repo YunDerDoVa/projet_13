@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'house.apps.HouseConfig',
     'table.apps.TableConfig',
     'library.apps.LibraryConfig',
+    'color_tool.apps.ColorToolConfig',
 ]
 
 MIDDLEWARE = [
