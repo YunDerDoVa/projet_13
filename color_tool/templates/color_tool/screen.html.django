@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Digital Art - Color Tool</title>
+    <style media="screen">
+      body {
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      h1 {
+        margin: 0;
+        padding: 12px;
+        border-radius: 3px;
+      }
+    </style>
+  </head>
+  <body style="background-color: {{ hexa_color }}; color: {{ text_color }};">
+
+    <h1 style="color: {{ text_color }}; background-color: {{ text_background_color }}">
+      {{ hexa_color }}
+    </h1>
+
+  </body>
+</html>
