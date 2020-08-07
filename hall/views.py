@@ -2,5 +2,9 @@ from django.shortcuts import render
 
 
 # Create your views here.
-def home(request):
-    return render(request, 'hall/home.html.django')
+def index(request):
+    return render(request, 'hall/index.html.django')
+
+
+def discover(request):
+    return render(request, 'hall/discover.html.django')
