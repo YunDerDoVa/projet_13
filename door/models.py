@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import AbstractUser, UserManager
 
 
 # Create your models here.
@@ -8,6 +8,8 @@ class Privacy(models.Model):
 
     private_profile = models.BooleanField(default=False)
     private_posts = models.BooleanField(default=False)
+
+    disable_account = models.DateField(null=True, default=None)
 
 
 class User(AbstractUser):
