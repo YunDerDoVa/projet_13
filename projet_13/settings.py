@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'door.apps.DoorConfig',
     'hall.apps.HallConfig',
     'house.apps.HouseConfig',
+    'table.apps.TableConfig',
+    'library.apps.LibraryConfig',
 ]
 
 MIDDLEWARE = [
