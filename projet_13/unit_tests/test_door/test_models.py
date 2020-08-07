@@ -11,7 +11,7 @@ class DoorModelsTestCase(TestCase):
 
     def setUp(self) -> None:
         user_dict = get_user_dict(0)
-        user = User.objects.register_new_user(user_dict['username'], user_dict['email'], user_dict['password'])
+        user = User.register_new_user(user_dict['username'], user_dict['email'], user_dict['password'])
 
         self.user_dict = user_dict
         self.user = user

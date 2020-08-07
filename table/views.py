@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from .views import TablePost, TableLike, TableComment
+from .models import TablePost, TableLike, TableComment
 
 
 # Create your views here.
