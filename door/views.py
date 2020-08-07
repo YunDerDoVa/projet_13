@@ -8,6 +8,9 @@ from .forms import RegisterForm
 # Create your views here.
 def register(request):
 
+    if request.user.is_authenticated:
+        return redirect('dashboard')
+
     form = RegisterForm()
 
     if request.method == "POST":
@@ -18,9 +21,9 @@ def register(request):
             cd = form.cleaned_data
 
             if cd['password1'] == cd['password2']:
-                user = User.objects.register_new_user(cd['username'], cd['email'], cd['password1'])
+                user = User.register_new_user(cd['username'], cd['email'], cd['password1'])
                 login(request, user)
-                return redirect('home')
+                return redirect('discover')
 
     context = {
         'form': form,
