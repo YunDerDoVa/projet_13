@@ -8,7 +8,7 @@ class TablePost(models.Model):
     draft = models.BooleanField(default=False)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_DEFAULT, default=None, null=True)
     title = models.CharField(max_length=63, default='')
-    description = models.TextField(max_length=2087, default='')
+    description = models.TextField(max_length=2047, default='')
     readme = models.TextField(max_length=2047, null=True)
     script_js = models.FileField(upload_to='scripts_js/', null=True)
     style_css = models.FileField(upload_to='styles_css/')
