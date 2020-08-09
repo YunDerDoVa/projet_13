@@ -7,9 +7,11 @@
   <link rel="stylesheet" href="{% static "hall/css/template.css" %}">
 {% endblock stylesheets %}
 
+{% block navbar %}{% endblock navbar %}
+
 {% block content %}
 
-<main class="container-fluid">
+<main class="container-fluid my-0">
   <div class="row no-gutter">
     <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
     <div class="col-md-8 col-lg-6 bg-dark text-white shadow">
