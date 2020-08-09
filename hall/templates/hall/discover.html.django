@@ -3,12 +3,18 @@
 
 {% block content %}
 
-  <main class="container">
-    <h1>
-      Discover
-    </h1>
-    <p></p>
-  </main>
+  <main class="container-fluid text-light bg-dark">
 
+    <div class="container">
+
+      <h1 class="mb-4">Discover</h1>
+
+      {% for post in posts %}
+        {% include post.card_template_path %}
+      {% endfor %}
+
+    </div>
+
+  </main>
 
 {% endblock content %}

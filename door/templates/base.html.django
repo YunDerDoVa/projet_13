@@ -16,8 +16,8 @@
 
     {% block stylesheets %}{% endblock stylesheets %}
     <link rel="stylesheet" href="{% static "projet_13/css/custom_bootstrap.css" %}">
-    <link rel="stylesheet" href="{% static "projet_13/css/master.css" %}">
     <link rel="stylesheet" href="{% static "projet_13/css/btn.css" %}">
+    <link rel="stylesheet" href="{% static "projet_13/css/master.css" %}">
 
   </head>
   <body>

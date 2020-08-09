@@ -17,7 +17,10 @@
         <div class="container">
           <div class="row">
             <div class="col-md-9 col-lg-8 mx-auto">
-              <h3 class="login-heading mb-4">Welcome back!</h3>
+              <h1 class="index-heading mb-4">projet_13</h1>
+              <h2 class="index-heading mb-4">
+                Create and share your crazyest scripts here !
+              </h2>
               {% if not request.user.is_authenticated %}
               <a class="btn btn-lg btn-block btn-login text-uppercase font-weight-bold mb-2" href="{% url 'login' %}">
                 <i class="fas fa-sign-in-alt"></i>
