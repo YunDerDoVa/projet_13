@@ -1,13 +1,48 @@
 {% extends "base.html.django" %}
 
+{% load static %}
+
+
+{% block stylesheets %}
+  <link rel="stylesheet" href="{% static "hall/css/template.css" %}">
+{% endblock stylesheets %}
 
 {% block content %}
 
-  <main class="container">
-    <h1>
-      {{ request.user }}
-    </h1>
-  </main>
+<main class="container-fluid">
+  <div class="row no-gutter">
+    <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+    <div class="col-md-8 col-lg-6 bg-dark text-white shadow">
+      <div class="login d-flex align-items-center py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-9 col-lg-8 mx-auto">
+              <h3 class="login-heading mb-4">Welcome back!</h3>
+              {% if not request.user.is_authenticated %}
+              <a class="btn btn-lg btn-block btn-login text-uppercase font-weight-bold mb-2" href="{% url 'login' %}">
+                <i class="fas fa-sign-in-alt"></i>
+                Login
+              </a>
+              <a class="btn btn-lg btn-block btn-register text-uppercase font-weight-bold mb-2" href="{% url 'register' %}">
+                <i class="fas fa-book-medical"></i>
+                Register
+              </a>
+              {% endif %}
+              <a class="btn btn-lg btn-block btn-discover text-uppercase font-weight-bold mb-2" href="{% url 'discover' %}">
+                <i class="fas fa-tree"></i>
+                Discover
+              </a>
+              <a class="btn btn-lg btn-block btn-library text-uppercase font-weight-bold mb-2" href="{% url 'library_home' %}">
+                <i class="fas fa-book"></i>
+                Documentation
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
 
 
 {% endblock content %}

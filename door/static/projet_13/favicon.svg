@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="1080" width="1080">
+  <defs>
+    <path id="path-2" opacity="1" fill-rule="evenodd" d="M242.39439204366056 949.75L582.8943920436606 130.25C582.8943920436606 130.25 950.1234061576113 642.8013812261424 858.3943920436604 740.25C766.6653779297096 837.6986187738576 206.89439204366045 550.75 206.89439204366045 550.75L357.39439204366056 485.25C357.39439204366056 485.25 674.2032996099078 654.8821446853674 718.8943920436604 607.25C763.5854844774132 559.6178553146326 582.8943920436606 337.75 582.8943920436606 337.75L357.3943920436607 949.75L242.39439204366056 949.75Z"/>
+    <filter id="filter-3" filterUnits="userSpaceOnUse" x="-50%" y="-50%" width="200%" height="200%">
+      <feOffset in="SourceAlpha" result="shadow-1-feOffset-shadow" dx="0" dy="0"/>
+      <feGaussianBlur in="shadow-1-feOffset-shadow" result="shadow-1-feGaussianBlur-shadow" stdDeviation="6"/>
+      <feColorMatrix in="shadow-1-feGaussianBlur-shadow" result="shadow-1-feColorMatrix-shadow" type="matrix" values="0 0 0 0 0.027450980392156862  0 0 0 0 0.25098039215686274  0 0 0 0 0.45098039215686275  0 0 0 1 0"/>
+    </filter>
+  </defs>
+  <g>
+    <g opacity="1">
+      <rect fill="rgb(242,175,92)" fill-opacity="1" opacity="1" x="0" y="0" width="1080" height="1080"/>
+    </g>
+    <g opacity="1">
+      <use xlink:href="#path-2" fill="black" filter="url(#filter-3)" stroke="black" stroke-opacity="0" stroke-width="0"/>
+      <use xlink:href="#path-2" fill="rgb(101,191,191)" fill-opacity="1"/>
+    </g>
+  </g>
+</svg>

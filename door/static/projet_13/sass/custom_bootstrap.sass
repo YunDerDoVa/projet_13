@@ -1,0 +1,24 @@
+$primary: #F2AF5C
+$secondary: #65BFBF
+$login: hsl(180, 41%, 77%)
+$register: hsl(180, 41%, 67%)
+$discover: hsl(180, 41%, 57%)
+$library: hsl(180, 41%, 47%)
+
+
+@import '../../node_modules/bootstrap/scss/bootstrap.scss'
+
+.btn-discover, .btn-login, .btn-register, .btn-library
+  include button-variant
+
+.btn-login
+  background-color: $login
+
+.btn-register
+  background-color: $register
+
+.btn-discover
+  background-color: $discover
+
+.btn-library
+  background-color: $library

@@ -14,18 +14,24 @@
         justify-content: center;
         align-items: center;
       }
-      h1 {
+      main {
         margin: 0;
         padding: 12px;
         border-radius: 3px;
       }
     </style>
   </head>
-  <body style="background-color: {{ hexa_color }}; color: {{ text_color }};">
+  <body style="background-color: {{ data.rgb.value }}; color: {{ text_color }};">
 
-    <h1 style="color: {{ text_color }}; background-color: {{ text_background_color }}">
-      {{ hexa_color }}
-    </h1>
+    <main style="color: {{ text_color }}; background-color: {{ text_background_color }}">
+      <ul>
+        <li>Name : {{ data.name.value }}</li>
+        <li>Hexa : {{ data.hex.value }}</li>
+        <li>RGB : {{ data.rgb.value }}</li>
+        <li>HSL : {{ data.hsl.value }}</li>
+        <li>XYZ : {{ data.XYZ.value }}</li>
+      </ul>
+    </main>
 
   </body>
 </html>

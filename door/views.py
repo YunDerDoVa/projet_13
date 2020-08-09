@@ -8,6 +8,11 @@ from .forms import RegisterForm
 # Create your views here.
 def register(request):
 
+    """ This view do it :
+    - redirect to dashboard if user is authenticated.
+    - register and login a new user for POST requests
+    - render register template for GET requests """
+
     if request.user.is_authenticated:
         return redirect('dashboard')
 
