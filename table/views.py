@@ -7,7 +7,11 @@ from .models import TablePost, TableLike, TableComment
 def post(request, post_id):
     post = TablePost.objects.get(id=post_id)
 
-    return render(request, 'table/post.html.django')
+    context = {
+        'post': post,
+    }
+
+    return render(request, 'table/post.html.django', context)
 
 
 def publish(request):
@@ -17,4 +21,8 @@ def publish(request):
 def edit(request, post_id):
     post = TablePost.objects.get(id=post_id)
 
-    return render(request, 'table/post.html.django')
+    context = {
+        'post': post,
+    }
+
+    return render(request, 'table/post.html.django', context)

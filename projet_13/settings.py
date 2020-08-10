@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'table.apps.TableConfig',
     'library.apps.LibraryConfig',
     'color_tool.apps.ColorToolConfig',
+    'markdown_deux',
 ]
 
 MIDDLEWARE = [
@@ -139,3 +140,6 @@ STATIC_URL = '/static/'
 # Redirects
 LOGOUT_REDIRECT_URL = 'index'
 LOGIN_REDIRECT_URL = 'dashboard'
+
+# TotalVirus
+TOTALVIRUS_API_KEY = os.environ.get('TOTALVIRUS_API_KEY', None)

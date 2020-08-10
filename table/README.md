@@ -15,5 +15,6 @@ This package contain the tables on Digital Art.
 ## Models
 - TablePost
     - add_like
+    - is_background
 - TableLike
 - TableComment

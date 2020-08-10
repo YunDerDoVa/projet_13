@@ -1,0 +1,11 @@
+<div class="script-render">
+  <div id="background{{ post.id }}" class="digital-art-background">
+
+  </div>
+  <script type="text/javascript">
+    {% autoescape off %}
+      {{ post.script_js }}
+    {% endautoescape %}
+    main("background{{ post.id }}");
+  </script>
+</div>

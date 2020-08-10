@@ -1,6 +1,7 @@
 from django.shortcuts import render
 
 from door.models import User
+from .posts_tools import DiscoverTool
 
 
 # Create your views here.
@@ -17,4 +18,13 @@ def index(request):
 
 
 def discover(request):
-    return render(request, 'hall/discover.html.django')
+
+    discover_tool = DiscoverTool()
+
+    posts = discover_tool.get_posts()
+
+    context = {
+        'posts': posts,
+    }
+
+    return render(request, 'hall/discover.html.django', context)
