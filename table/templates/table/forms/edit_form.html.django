@@ -1,5 +1,10 @@
-<form class="" action="." method="post">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button class="form-button btn btn-primary" type="submit" name="submit">Save</button>
-</form>
+{{ form.errors }}
+
+
+<div class="row flex-wrap">
+  <form class="col-12" action="." method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="form-button btn btn-primary" type="submit" name="submit">Editer</button>
+  </form>
+</div>

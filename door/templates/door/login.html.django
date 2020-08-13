@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="{% static "door/css/auth_style.css" %}">
 {% endblock stylesheets %}
 
-{% block content %}
+{% block main %}
 
   <div class="container-fluid">
     <div class="row no-gutter">

@@ -9,7 +9,7 @@
 
 {% block navbar %}{% endblock navbar %}
 
-{% block content %}
+{% block main %}
 
 <main class="container-fluid my-0">
   <div class="row no-gutter">
@@ -50,4 +50,4 @@
 </main>
 
 
-{% endblock content %}
+{% endblock main %}

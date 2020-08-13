@@ -3,10 +3,12 @@
 
   </div>
   <script type="text/javascript">
-    var background_id = "background{{ post.id }}"
-    {% autoescape off %}
-      {{ post.script_js }}
-    {% endautoescape %}
+    var background_id = "background{{ post.id }}";
+    ;(function(background_id) {
+      {% autoescape off %}
+        {{ post.script_js }}
+      {% endautoescape %}
+    })(background_id)
   </script>
   <!--script type="text/javascript">
     main("background{{ post.id }}");
