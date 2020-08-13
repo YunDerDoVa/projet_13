@@ -1,5 +1,28 @@
 {% extends "base.html.django" %}
 
+{% load static %}
+
+
+{% block stylesheets %}
+  <link rel="stylesheet" href="{% static "table/css/render.css" %}">
+{% endblock stylesheets %}
+
 {% block content %}
-  my_likes
+
+  <h1 class="mb-4">
+    <a href="{% url 'dashboard' %}">Dashboard</a>
+    >
+    My Likes
+  </h1>
+
+  <div class="row">
+    {% for post in likes %}
+      <div class="col-12">
+        {% if post.is_background %}
+        {% include 'table/cards/background_card.html.django' %}
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+
 {% endblock content %}

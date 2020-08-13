@@ -1,5 +1,29 @@
 {% extends "base.html.django" %}
 
+{% load static %}
+
+
+{% block stylesheets %}
+  <link rel="stylesheet" href="{% static "table/css/render.css" %}">
+{% endblock stylesheets %}
+
 {% block content %}
-  my_library
+
+  <h1 class="mb-4">
+    <a href="{% url 'dashboard' %}">Dashboard</a>
+    >
+    My Library
+  </h1>
+
+  <div class="row">
+    {% for post in posts %}
+      <div class="col-12">
+        {% if post.is_background %}
+        {% include 'table/cards/background_card.html.django' %}
+        {% endif %}
+        <a href="{% url 'edit' post_id=post.id %}">Edit {{ post.title }}</a>
+      </div>
+    {% endfor %}
+  </div>
+
 {% endblock content %}
