@@ -1,0 +1,37 @@
+{% extends "base.html.django" %}
+
+{% load static %}
+
+
+{% block stylesheets %}
+  <link rel="stylesheet" href="{% static "table/css/publish.css" %}">
+{% endblock stylesheets %}
+
+{% block content %}
+
+  <main class="container-fluid">
+
+    <div class="container">
+
+      <h1 class="mb-4">Publier un Background</h1>
+
+      <h2>Environnement</h2>
+      <p>
+        <ul>
+          <li>
+            Balise : <strong>DIV</strong>
+          </li>
+          <li>
+            Variable JS : <strong>background_id</strong> (id de la div)
+          </li>
+          <!--li>
+            Fonction JS : main(background_id) (afin de permettre de partager des scripts prêt à l'emploi)
+          </li-->
+        </ul>
+      </p>
+      {% include "table/forms/publish_form.html.django" %}
+    </div>
+
+  </main>
+
+{% endblock content %}

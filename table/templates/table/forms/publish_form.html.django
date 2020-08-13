@@ -1,0 +1,10 @@
+{{ form.errors }}
+
+
+<div class="row flex-wrap">
+  <form class="col-12" action="." method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="form-button btn btn-primary" type="submit" name="submit">Publier</button>
+  </form>
+</div>

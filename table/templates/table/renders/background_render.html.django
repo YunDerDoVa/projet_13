@@ -3,9 +3,12 @@
 
   </div>
   <script type="text/javascript">
+    var background_id = "background{{ post.id }}"
     {% autoescape off %}
       {{ post.script_js }}
     {% endautoescape %}
-    main("background{{ post.id }}");
   </script>
+  <!--script type="text/javascript">
+    main("background{{ post.id }}");
+  </script-->
 </div>

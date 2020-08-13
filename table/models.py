@@ -28,6 +28,12 @@ class TablePost(models.Model):
     def is_background(self):
         return self.IS_BACKGROUND
 
+    def get_background_instructions(self):
+        if self.is_background():
+            return "<div id=\"background" + str(self.id) + "\" class=\"digital-art-background\">"
+        else:
+            return None
+
 
 class TableLike(models.Model):
 

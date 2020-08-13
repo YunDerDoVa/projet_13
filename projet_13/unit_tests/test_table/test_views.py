@@ -43,7 +43,7 @@ class TableViewsTestCase(TestCase):
         response = self.client.get(url)
 
         self.assertTemplateUsed(response, 'base.html.django')
-        self.assertTemplateUsed(response, 'table/publish.html.django')
+        self.assertTemplateUsed(response, 'table/publish_post.html.django')
 
     def test_edit_view(self):
         post = self.test_posts[0]
@@ -51,4 +51,4 @@ class TableViewsTestCase(TestCase):
         response = self.client.get(url)
 
         self.assertTemplateUsed(response, 'base.html.django')
-        self.assertTemplateUsed(response, 'table/edit.html.django')
+        self.assertTemplateUsed(response, 'table/edit_post.html.django')

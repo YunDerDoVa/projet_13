@@ -1,0 +1,16 @@
+{% extends "base.html.django" %}
+
+
+{% load static %}
+
+{% block content %}
+
+  <main class="container-fluid">
+
+    <div class="container">
+      {% include "table/edit_post.html.django" %}
+    </div>
+
+  </main>
+
+{% endblock content %}
