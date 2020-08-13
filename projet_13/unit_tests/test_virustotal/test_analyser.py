@@ -1,4 +1,4 @@
-import os
+import tempfile
 from django.test import TestCase
 from django.conf import settings
 
@@ -8,7 +8,9 @@ from virustotal.analyzer import Analyzer
 class AnalyserTestCase(TestCase):
 
     def setUp(self) -> None:
-        self.file = open('inoffensive_file.txt', 'rb')
+        self.file = tempfile.NamedTemporaryFile()
+        self.file.name = 'inoffensive_file.txt'
+        self.mode = 'w'
 
     def test_scan_file(self):
 

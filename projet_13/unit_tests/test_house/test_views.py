@@ -18,6 +18,7 @@ class HouseViewsTestCase(TestCase):
 
     def test_my_library_view(self):
         url = reverse('my_library')
+        self.client.login(username=self.test_users[0].username, password=self.test_users[0].password)
         response = self.client.get(url)
 
         self.assertTemplateUsed(response, 'base.html.django')
@@ -25,6 +26,7 @@ class HouseViewsTestCase(TestCase):
 
     def test_my_likes_view(self):
         url = reverse('my_likes')
+        self.client.login(username=self.test_users[1].username, password=self.test_users[1].password)
         response = self.client.get(url)
 
         self.assertTemplateUsed(response, 'base.html.django')

@@ -2,6 +2,7 @@ from django.test import TestCase
 from django.urls import reverse
 
 from digitaltesttools.user import create_test_users
+from table.models import TablePost
 
 
 class TableViewsTestCase(TestCase):

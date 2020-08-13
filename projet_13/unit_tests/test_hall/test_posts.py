@@ -11,4 +11,4 @@ class PostsToolTestCase(TestCase):
 
         posts = discover_tool.get_posts()
 
-        assertEqual(len(posts), 1)
+        self.assertEqual(len(posts), 1)

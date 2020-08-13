@@ -1,0 +1,19 @@
+{% extends "base.html.django" %}
+
+{% block content %}
+
+  <h1 class="mb-4">Documentation</h1>
+
+  <div class="row">
+    <div class="col-md-12 col-lg-4">
+      <h2 class="bg-secondary text-center px-2 py-2">
+        Background
+      </h2>
+      <p>
+        Les backgrounds sont des fonds d'écran. Cette section est faite pour
+        partager nos fonds d'écran les plus fous !
+      </p>
+    </div>
+  </div>
+
+{% endblock content %}

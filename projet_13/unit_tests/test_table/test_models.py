@@ -41,9 +41,9 @@ class TableModelsTestCase(TestCase):
         post = TablePost.objects.filter(user=user).first()
 
         self.assertEqual(post.user, user)
-        self.assertTrue(post.date_creation is not None)
-        self.assertTrue(post.date_last_update is not None)
-        self.assertEqual(post.number_of_likes, 0)
+        self.assertTrue(post.creation_date is not None)
+        self.assertTrue(post.last_update_date is not None)
+        self.assertEqual(post.number_of_like, 0)
 
     def test_table_post_add_like_function(self):
         user_post = self.test_users[0]

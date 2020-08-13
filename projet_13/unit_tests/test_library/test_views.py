@@ -10,7 +10,7 @@ class LibraryViewsTestCase(TestCase):
         self.test_users = create_test_users(3)
 
     def test_home_view(self):
-        url = reverse('library')
+        url = reverse('library_home')
         response = self.client.get(url)
 
         self.assertTemplateUsed(response, 'base.html.django')
