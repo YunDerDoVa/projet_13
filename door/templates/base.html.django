@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="{% static "projet_13/css/master.css" %}">
 
   </head>
-  <body>
+  <body class="bg-dark text-white">
 
       {% block navbar %}
         {% include "components/navbar.html.django" %}
@@ -29,7 +29,7 @@
       {% block header %}{% endblock header %}
 
       {% block main %}
-        <main class="container-fluid bg-dark text-white">
+        <main class="container-fluid">
           <div class="container py-4">
             {% block content %}{% endblock content %}
           </div>

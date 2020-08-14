@@ -9,23 +9,15 @@
 
 {% block content %}
 
-  <main class="container-fluid text-light bg-dark">
+  <h1 class="mb-4">Discover</h1>
 
-    <div class="container">
-
-      <h1 class="mb-4">Discover</h1>
-
-      <div class="row">
-        {% for post in posts %}
-          {% if post.is_background %}
-            {% include 'table/cards/background_card.html.django' %}
-          {% endif %}
-        {% endfor %}
-      </div>
-      <!-- /.row -->
-
-    </div>
-
-  </main>
+  <div class="row">
+    {% for post in posts %}
+      {% if post.is_background %}
+        {% include 'table/cards/background_card.html.django' %}
+      {% endif %}
+    {% endfor %}
+  </div>
+  <!-- /.row -->
 
 {% endblock content %}

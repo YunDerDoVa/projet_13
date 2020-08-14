@@ -1,4 +1,5 @@
 from django import forms
+from .models import User, Privacy
 
 
 class RegisterForm(forms.Form):
@@ -15,3 +16,17 @@ class RegisterForm(forms.Form):
         label='Password confirmation',
         widget=forms.PasswordInput(),
         max_length=127)
+
+
+class SettingsForm(forms.ModelForm):
+
+    class Meta:
+        model = User
+        fields = ['avatar', 'banner']
+
+
+class PrivacySettingsForm(forms.ModelForm):
+
+    class Meta:
+        model = Privacy
+        exclude = ['user', 'disable_account']

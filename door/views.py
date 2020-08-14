@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login
 
 from .models import User
-from .forms import RegisterForm
+from .forms import RegisterForm, SettingsForm, PrivacySettingsForm
 
 
 # Create your views here.
@@ -35,3 +35,35 @@ def register(request):
     }
 
     return render(request, 'door/register.html.django', context)
+
+
+def settings(request):
+
+    form = SettingsForm(instance=request.user)
+    privacy_form = PrivacySettingsForm(instance=request.user.privacy_settings)
+
+    toasts = []
+
+    if request.method == 'POST':
+        form = SettingsForm(request.POST, request.FILES, instance=request.user)
+        privacy_form = PrivacySettingsForm(request.POST, instance=request.user.privacy_settings)
+
+        if form.is_valid():
+            form.save()
+
+        if privacy_form.is_valid():
+            privacy_form.save()
+
+        if form.has_changed():
+            toasts.append('Global Settings Changed')
+
+        if privacy_form.has_changed():
+            toasts.append('Privacy Settings Changed')
+
+    context = {
+        'form': form,
+        'privacy_form': privacy_form,
+        'toasts': toasts,
+    }
+
+    return render(request, 'door/settings.html.django', context)

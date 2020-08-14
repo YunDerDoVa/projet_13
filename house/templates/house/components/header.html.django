@@ -1,0 +1,19 @@
+<header class="w-100">
+
+  {% if user.banner == 0 %}
+    <img class="banner img-fluid" src="https://source.unsplash.com/ieic5Tq8YMk/1024x512/" alt="Banner ({{ user.banner }}) of {{ user.username }}">
+  {% elif user.banner == 1 %}
+    <img class="banner img-fluid" src="https://source.unsplash.com/random/1024x512/" alt="Banner ({{ user.banner }}) of {{ user.username }}">
+  {% endif %}
+
+  <div class="avatar-row">
+    <div class="col-12 col-md-4 d-flex justify-content-center">
+      {% if user.avatar %}
+        <img class="avatar-img shadow" src="{{ user.avatar.url }}" alt="Avatar of {{ user.username }}">
+      {% else %}
+        <img class="avatar-img shadow" src="https://via.placeholder.com/150" alt="Avatar of {{ user.username }}">
+      {% endif %}
+    </div>
+  </div>
+
+</header>

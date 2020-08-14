@@ -6,18 +6,23 @@ from django.contrib.auth.models import AbstractUser, UserManager
 class Privacy(models.Model):
     """ Privacy settings model. """
 
+    user = models.OneToOneField('User', on_delete=models.CASCADE, null=True, related_name='privacy_settings')
     private_profile = models.BooleanField(default=False)
     private_posts = models.BooleanField(default=False)
 
-    disable_account = models.DateField(null=True, default=None)
+    disable_account = models.DateField(null=True, default=None, blank=True)
 
 
 class User(AbstractUser):
     """ User with more options. """
 
+    BANNER_CHOICES = [
+        (0, 'Dev Mode'),
+        (1, 'Unsplash Random'),
+    ]
+
     avatar = models.ImageField(upload_to='user/')
-    banner = models.IntegerField(default=0)
-    privacy_settings = models.OneToOneField(Privacy, on_delete=models.SET_NULL, null=True)
+    banner = models.IntegerField(default=0, choices=BANNER_CHOICES)
 
     @staticmethod
     def register_new_user(username, email, password):

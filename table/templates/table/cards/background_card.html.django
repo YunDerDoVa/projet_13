@@ -1,11 +1,14 @@
 <div class="col-lg-4 col-sm-6 mb-4">
-  <div class="card bg-secondary shadow">
+  <div class="card bg-secondary shadow h-100">
     {% include "table/renders/background_render.html.django" %}
     <div class="card-body">
       <h4 class="card-title">
         <a class="text-dark" href="{% url 'post' post_id=post.id %}">{{ post.title }}</a>
       </h4>
       <p class="card-tex text-dark">{{ post.description }}</p>
+    </div>
+    <div class="card-footer">
+      {% include "table/social/card_footer.html.django" %}
     </div>
   </div>
 </div>

@@ -1,0 +1,29 @@
+
+{% for error in form.errors %}
+  <div class="alert alert-danger" role="alert">
+    {{ form.errors }}
+  </div>
+{% endfor %}
+
+{% for error in privacy_form.errors %}
+  <div class="alert alert-danger" role="alert">
+    {{ form.errors }}
+  </div>
+{% endfor %}
+
+{% for toast in toasts %}
+  <div class="alert alert-success" role="alert">
+    {{ toast }}
+  </div>
+{% endfor %}
+
+<div class="row flex-wrap">
+  <form class="col-12" action="." method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <h2>Global Settings</h2>
+    {{ form.as_p }}
+    <h2>Privacy Settings</h2>
+    {{ privacy_form.as_p }}
+    <button class="form-button btn btn-primary" type="submit" name="submit">Enregistrer</button>
+  </form>
+</div>

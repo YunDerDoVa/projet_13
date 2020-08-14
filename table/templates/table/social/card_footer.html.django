@@ -1,0 +1,3 @@
+<div class="row">
+  <a class="col-4 btn btn-primary" href="{% url 'living_room' user_id=post.user.id %}">{{ post.user.username }}</a>
+</div>
