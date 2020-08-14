@@ -2,6 +2,7 @@ from django.shortcuts import render
 
 from door.models import User
 from .posts_tools import DiscoverTool
+from table.models import TableLike
 
 
 # Create your views here.
@@ -22,6 +23,13 @@ def discover(request):
     discover_tool = DiscoverTool()
 
     posts = discover_tool.get_posts()
+
+    for post in posts:
+        if TableLike.check_liked(post, request.user):
+            post.is_liked = True
+
+        if TableLike.check_disliked(post, request.user):
+            post.is_disliked = True
 
     context = {
         'posts': posts,

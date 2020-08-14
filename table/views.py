@@ -1,12 +1,18 @@
 from django.shortcuts import render, redirect
 
-from .models import TablePost, TableLike, TableComment
+from .models import TablePost, TableLike
 from .forms import PostForm
 
 
 # Create your views here.
 def post(request, post_id):
     table_post = TablePost.objects.get(id=post_id)
+
+    if TableLike.check_liked(table_post, request.user):
+        table_post.is_liked = True
+
+    if TableLike.check_disliked(table_post, request.user):
+        table_post.is_disliked = True
 
     context = {
         'post': table_post,

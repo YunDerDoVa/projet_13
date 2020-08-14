@@ -7,4 +7,10 @@ from .models import TablePost, TableLike, TableComment
 class TablePostAdmin(admin.ModelAdmin):
     model = TablePost
 
+
+class TableLikeAdmin(admin.ModelAdmin):
+    model = TableLike
+
+
 admin.site.register(TablePost, TablePostAdmin)
+admin.site.register(TableLike, TableLikeAdmin)

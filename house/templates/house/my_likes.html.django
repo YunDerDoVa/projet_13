@@ -16,12 +16,10 @@
   </h1>
 
   <div class="row">
-    {% for post in likes %}
-      <div class="col-12">
-        {% if post.is_background %}
+    {% for post in posts %}
+      {% if post.is_background %}
         {% include 'table/cards/background_card.html.django' %}
-        {% endif %}
-      </div>
+      {% endif %}
     {% endfor %}
   </div>
 

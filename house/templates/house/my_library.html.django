@@ -17,12 +17,9 @@
 
   <div class="row">
     {% for post in posts %}
-      <div class="col-12">
-        {% if post.is_background %}
+      {% if post.is_background %}
         {% include 'table/cards/background_card.html.django' %}
-        {% endif %}
-        <a href="{% url 'edit' post_id=post.id %}">Edit {{ post.title }}</a>
-      </div>
+      {% endif %}
     {% endfor %}
   </div>
 

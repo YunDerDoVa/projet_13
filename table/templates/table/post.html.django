@@ -11,7 +11,7 @@
 
 {% block content %}
 
-  <h1 class="mb-4">{{ post.title }}</h1>
+  <h1 id="post{{ post.id }}" class="mb-4">{{ post.title }}</h1>
 
   <div class="row">
 
@@ -22,6 +22,9 @@
     </div>
 
     <div class="col-md-4">
+
+      {% include "table/social/post_actions.html.django" %}
+
       <h3 class="my-3">Description</h3>
       <p>{{ post.description }}</p>
       <h3 class="my-3">README</h3>

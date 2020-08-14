@@ -21,7 +21,6 @@ class TablePost(models.Model):
     last_update_date = models.DateTimeField(auto_now=True)
 
     def add_like(self, like_from, **kwargs):
-
         like = not kwargs.pop('dislike', False)
         TableLike.objects.create(like_from=like_from, post=self, like=like)
 
@@ -38,9 +37,25 @@ class TablePost(models.Model):
 class TableLike(models.Model):
 
     like_from = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True)
-    post = models.ForeignKey(TablePost, on_delete=models.CASCADE)
-    date = models.DateTimeField(auto_now_add=True)
+    post = models.ForeignKey(TablePost, on_delete=models.CASCADE, related_name='table_like_set')
+    date = models.DateTimeField(auto_now=True)
     like = models.BooleanField(default=True)
+
+    class Meta:
+        unique_together = [['like_from', 'post']]
+
+    @staticmethod
+    def check_liked(post, user):
+        if TableLike.objects.filter(post=post, like_from=user, like=True).first():
+            return True
+        else:
+            return False
+
+    def check_disliked(post, user):
+        if TableLike.objects.filter(post=post, like_from=user, like=False).first():
+            return True
+        else:
+            return False
 
 
 class TableComment(models.Model):

@@ -49,7 +49,7 @@ de chaque catégorie. Cela nécessite donc de créer une api.
 #### 2. a. Côté Web
 
 - [x] **Poster**/**Editer** Script
-- [ ] **Aimer**/**Ne pas aimer** Post
+- [x] **Aimer**/**Ne pas aimer** Post
 - [x] **Visiter** Profile/Post
 - [x] **Découvrir** Posts
 - [x] **Editer** Compte

@@ -1,0 +1,40 @@
+<div class="row">
+
+  <a class="col-4 btn btn-primary"
+  href="{% url 'living_room' user_id=post.user.id %}">
+    {{ post.user.username }}
+  </a>
+
+  {% if post.user != request.user %}
+
+    {% if post.is_liked %}
+      <a class="col-4 btn btn-success"
+      href="{% url 'like_post' post_id=post.id like_from_id=request.user.id %}?next={{ request.get_full_path }}">
+        Like
+      </a>
+    {% else %}
+      <a class="col-4 btn btn-info"
+      href="{% url 'like_post' post_id=post.id like_from_id=request.user.id %}?next={{ request.get_full_path }}">
+        Like
+      </a>
+    {% endif %}
+
+    {% if post.is_disliked %}
+      <a class="col-4 btn btn-danger"
+      href="{% url 'dislike_post' post_id=post.id like_from_id=request.user.id %}?next={{ request.get_full_path }}">
+          Dislike
+      </a>
+    {% else %}
+      <a class="col-4 btn btn-info"
+      href="{% url 'dislike_post' post_id=post.id like_from_id=request.user.id %}?next={{ request.get_full_path }}">
+          Dislike
+      </a>
+    {% endif %}
+
+  {% else %}
+
+    <a class="mx-2 btn btn-warning" href="{% url 'edit' post_id=post.id %}">Edit {{ post.title }}</a>
+
+  {% endif %}
+
+</div>
