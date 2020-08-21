@@ -58,10 +58,10 @@ class TableLike(models.Model):
             return False
 
     def edit_like(self, like):
-        if like and not table_like.like:
-            self.post.number_of_like += 1
-        elif not like and table_like.like:
-            self.post.number_of_like -= 1
+        if like and not self.like:
+            self.post.number_of_like =+ 1
+        elif not like and self.like:
+            self.post.number_of_like =- 1
 
         self.like = like
         self.post.save()

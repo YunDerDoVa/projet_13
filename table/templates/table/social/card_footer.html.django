@@ -1,42 +1,49 @@
 <div class="card-footer">
   <div class="row">
 
+    <!-- If User is not owner -->
     {% if post.user != request.user %}
-
-      <a class="col-4 btn btn-primary"
+      <a class="col-lg-4 col-md-12 col-12 btn btn-primary"
           href="{% url 'living_room' user_id=post.user.id %}">
           {{ post.user.username }}
       </a>
 
       {% if post.is_liked %}
-        <a class="col-4 btn btn-success"
-        href="{% url 'like_post' post_id=post.id like_from_id=request.user.id %}?next={{ request.get_full_path }}">
-          Like
-        </a>
-        <form class="" action="{% url 'like_post' post_id=post.id like_from_id=request.user.id %}?next={{ request.get_full_path }}" method="post">
-          <button type="submit" name="submit">like</button>
+        <form class="col-lg-4 col-6"
+        action="{% url 'like_post' post_id=post.id like_from_id=request.user.id %}?next={{ request.get_full_path }}" method="post">
+          {% csrf_token %}
+          <button class="w-100 btn btn-liked" type="submit" name="submit">Liked</button>
         </form>
+
       {% else %}
-        <a class="col-4 btn btn-info"
-        href="{% url 'like_post' post_id=post.id like_from_id=request.user.id %}?next={{ request.get_full_path }}">
-          Like
-        </a>
+        <form class="col-lg-4 col-6"
+        action="{% url 'like_post' post_id=post.id like_from_id=request.user.id %}?next={{ request.get_full_path }}" method="post">
+          {% csrf_token %}
+          <button class="w-100 btn btn-like" type="submit" name="submit">Like</button>
+        </form>
+
       {% endif %}
 
       {% if post.is_disliked %}
-        <a class="col-4 btn btn-danger"
-        href="{% url 'dislike_post' post_id=post.id like_from_id=request.user.id %}?next={{ request.get_full_path }}">
-            Dislike
-        </a>
+        <form class="col-lg-4 col-6"
+        action="{% url 'dislike_post' post_id=post.id like_from_id=request.user.id %}?next={{ request.get_full_path }}" method="post">
+          {% csrf_token %}
+          <button class="w-100 btn btn-disliked" type="submit" name="submit">Disliked</button>
+        </form>
+
       {% else %}
-        <a class="col-4 btn btn-info"
-        href="{% url 'dislike_post' post_id=post.id like_from_id=request.user.id %}?next={{ request.get_full_path }}">
-            Dislike
-        </a>
+        <form class="col-lg-4 col-6"
+        action="{% url 'dislike_post' post_id=post.id like_from_id=request.user.id %}?next={{ request.get_full_path }}" method="post">
+          {% csrf_token %}
+          <button class="w-100 btn btn-dislike" type="submit" name="submit">Dislike</button>
+        </form>
+
       {% endif %}
 
+    <!-- If User is the owner -->
     {% else %}
-      <a class="btn btn-warning" href="{% url 'table_edit' post_id=post.id %}">Edit {{ post.title }}</a>
+      <a class="col-12 btn btn-warning" href="{% url 'table_edit' post_id=post.id %}">Edit {{ post.title }}</a>
+
     {% endif %}
 
   </div>

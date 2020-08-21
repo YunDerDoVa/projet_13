@@ -32,10 +32,10 @@ def dislike_post(request, post_id, like_from_id):
     post = TablePost.objects.get(id=post_id)
     like_from = User.objects.get(id=like_from_id)
 
-    try:
-        like = TableLike.objects.get(post=post, like_from=like_from)
+    like = TableLike.objects.filter(post=post, like_from=like_from).first()
+    if like:
         like.edit_like(False)
-    except:
+    else:
         like = post.add_like(like_from, dislike=True)
 
     json = {

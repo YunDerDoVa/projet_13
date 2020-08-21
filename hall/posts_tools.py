@@ -12,4 +12,8 @@ class DiscoverTool:
         """ This method return TablePost queryset. Order it randomly
         and reorder it with a simple algorithm. """
 
-        return TablePost.objects.all()
+        posts = TablePost.objects.all()
+
+        posts = posts[:7]
+
+        return posts
