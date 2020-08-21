@@ -1,7 +1,9 @@
-- Intention
-- Retour d'expérience
-- Diagrammes / Croquis / Schémas
-- XTreme Programming
-- Plan de tests
-- User Stories
-- Déploiement
+- [x] Intention
+- [ ] Changer <a> en <form>
+- [ ] Coder bouton dl_js
+- [ ] Retour d'expérience
+- [ ] Diagrammes / Croquis / Schémas
+- [ ] XTreme Programming
+- [ ] Plan de tests
+- [ ] User Stories
+- [ ] Déploiement
