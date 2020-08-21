@@ -18,4 +18,5 @@ This package contain the tables on Digital Art.
     - is_background
     - get_background_instructions
 - TableLike
+    - edit_like
 - TableComment
