@@ -1,0 +1,7 @@
+- Intention
+- Retour d'expérience
+- Diagrammes / Croquis / Schémas
+- XTreme Programming
+- Plan de tests
+- User Stories
+- Déploiement

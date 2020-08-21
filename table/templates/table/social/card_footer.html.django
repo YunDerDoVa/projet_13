@@ -13,6 +13,9 @@
         href="{% url 'like_post' post_id=post.id like_from_id=request.user.id %}?next={{ request.get_full_path }}">
           Like
         </a>
+        <form class="" action="{% url 'like_post' post_id=post.id like_from_id=request.user.id %}?next={{ request.get_full_path }}" method="post">
+          <button type="submit" name="submit">like</button>
+        </form>
       {% else %}
         <a class="col-4 btn btn-info"
         href="{% url 'like_post' post_id=post.id like_from_id=request.user.id %}?next={{ request.get_full_path }}">
