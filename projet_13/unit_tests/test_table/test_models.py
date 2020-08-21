@@ -50,13 +50,13 @@ class TableModelsTestCase(TestCase):
         user_like = self.test_users[1]
         post = TablePost.objects.filter(user=user_post).first()
 
-        post.add_like(user_like, dislike=True)
+        post.add_like(user_like)
         like = TableLike.objects.get(like_from=user_like, post=post)
 
-        self.assertEqual(post.number_of_likes, 1)
-        self.assertEqual(post.like_set.count(), 1)
-        self.assertEqual(like, post.like_set.first())
-        self.assertFalse(post.like_set.first().like)
+        self.assertEqual(post.number_of_like, 1)
+        self.assertEqual(post.table_like_set.count(), 1)
+        self.assertEqual(like, post.table_like_set.first())
+        self.assertTrue(post.table_like_set.first().like)
 
     def test_table_like(self):
         user_like = self.test_users[2]

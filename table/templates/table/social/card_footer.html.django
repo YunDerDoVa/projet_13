@@ -36,7 +36,7 @@
       {% endif %}
 
     {% else %}
-      <a class="btn btn-warning" href="{% url 'edit' post_id=post.id %}">Edit {{ post.title }}</a>
+      <a class="btn btn-warning" href="{% url 'table_edit' post_id=post.id %}">Edit {{ post.title }}</a>
     {% endif %}
 
   </div>

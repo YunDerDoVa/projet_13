@@ -33,7 +33,7 @@
 
   {% else %}
 
-    <a class="mx-2 btn btn-warning" href="{% url 'edit' post_id=post.id %}">Edit {{ post.title }}</a>
+    <a class="mx-2 btn btn-warning" href="{% url 'table_edit' post_id=post.id %}">Edit {{ post.title }}</a>
 
   {% endif %}
 

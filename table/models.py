@@ -24,6 +24,12 @@ class TablePost(models.Model):
         like = not kwargs.pop('dislike', False)
         TableLike.objects.create(like_from=like_from, post=self, like=like)
 
+        if like:
+            self.number_of_like =+ 1
+            self.save()
+
+        return like
+
     def is_background(self):
         return self.IS_BACKGROUND
 
@@ -50,6 +56,16 @@ class TableLike(models.Model):
             return True
         else:
             return False
+
+    def edit_like(self, like):
+        if like and not table_like.like:
+            self.post.number_of_like += 1
+        elif not like and table_like.like:
+            self.post.number_of_like -= 1
+
+        self.like = like
+        self.post.save()
+        self.save()
 
     def check_disliked(post, user):
         if TableLike.objects.filter(post=post, like_from=user, like=False).first():

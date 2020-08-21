@@ -12,11 +12,10 @@ def like_post(request, post_id, like_from_id):
     like_from = User.objects.get(id=like_from_id)
 
     try:
-        like = TableLike.objects.create(post=post, like_from=like_from)
-    except IntegrityError:
         like = TableLike.objects.get(post=post, like_from=like_from)
-        like.like = True
-        like.save()
+        like.edit_like(True)
+    except:
+        like = post.add_like(like_from)
 
     json = {
         'success': True,
@@ -34,11 +33,10 @@ def dislike_post(request, post_id, like_from_id):
     like_from = User.objects.get(id=like_from_id)
 
     try:
-        like = TableLike.objects.create(post=post, like_from=like_from, like=False)
-    except IntegrityError:
         like = TableLike.objects.get(post=post, like_from=like_from)
-        like.like = False
-        like.save()
+        like.edit_like(False)
+    except:
+        like = post.add_like(like_from, dislike=True)
 
     json = {
         'success': True,

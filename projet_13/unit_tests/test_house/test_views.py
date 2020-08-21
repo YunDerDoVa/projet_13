@@ -1,13 +1,15 @@
 from django.test import TestCase
 from django.urls import reverse
 
-from digitaltesttools.user import create_test_users
+from digitaltesttools.user import get_or_create_test_users
+from digitaltesttools.user import TEST_PASSWORD
 
 
 class HouseViewsTestCase(TestCase):
 
     def setUp(self) -> None:
-        self.test_users = create_test_users(3)
+        self.test_users = get_or_create_test_users(3)
+        self.client.login(username=self.test_users[0].username, password=TEST_PASSWORD)
 
     def test_dashboard_view(self):
         url = reverse('dashboard')
@@ -18,7 +20,6 @@ class HouseViewsTestCase(TestCase):
 
     def test_my_library_view(self):
         url = reverse('my_library')
-        self.client.login(username=self.test_users[0].username, password=self.test_users[0].password)
         response = self.client.get(url)
 
         self.assertTemplateUsed(response, 'base.html.django')
@@ -26,7 +27,6 @@ class HouseViewsTestCase(TestCase):
 
     def test_my_likes_view(self):
         url = reverse('my_likes')
-        self.client.login(username=self.test_users[1].username, password=self.test_users[1].password)
         response = self.client.get(url)
 
         self.assertTemplateUsed(response, 'base.html.django')
