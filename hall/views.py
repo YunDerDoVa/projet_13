@@ -9,7 +9,7 @@ from table.models import TableLike
 def index(request):
     """ index view render the landing home page """
 
-    number_of_users = User.objects.count()
+    number_of_users = User.objects.all().count()
 
     context = {
         'number_of_users': number_of_users,
