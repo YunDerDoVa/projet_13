@@ -28,7 +28,9 @@ if os.getenv('DEBUG', 'True') == 'False':
 else:
     DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'projet13-an.herokuapp.com',
+]
 
 INTERNAL_IPS = [
     '127.0.0.1',
