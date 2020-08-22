@@ -92,13 +92,18 @@ WSGI_APPLICATION = 'projet_13.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+DB_LABEL = os.getenv('DB_LABEL', 'SQLITE')
 
+if DB_LABEL == 'MYSQL':
+    # database for MySQL
+    pass
+else: # (if DB_LABEL == 'SQLITE')
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
 
 # Auth user model
 AUTH_USER_MODEL = 'door.User'
