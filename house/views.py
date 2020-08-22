@@ -28,7 +28,8 @@ def my_library(request):
 
 def my_likes(request):
 
-    posts = TablePost.objects.filter(table_like_set__like_from=request.user)
+    posts = TablePost.objects.filter(table_like_set__like_from=request.user,
+        table_like_set__like=True)
 
     for post in posts:
         post.is_liked = True
