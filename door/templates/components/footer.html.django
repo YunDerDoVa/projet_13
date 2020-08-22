@@ -1,0 +1,20 @@
+<!-- Footer -->
+<footer class="px-3 py-4 bg-info">
+
+  <div class="row">
+
+    <div class="col-12 col-md-6 col-lg-4">
+      <a href="{% url 'legacy' %}">Legacy Mentions</a>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-4">
+      <a href="{% url 'color_tool_screen' %}?hexa=00FF00">Color Tool</a>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-4">
+      <a href="{% url 'library_home' %}">Documentation</a>
+    </div>
+
+  </div>
+
+</footer>

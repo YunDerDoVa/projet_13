@@ -7,3 +7,4 @@ This package is the learning room of the tree.
 
 ## Urls
 - library_home
+- legacy

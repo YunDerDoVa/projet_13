@@ -1,8 +1,8 @@
 - [x] Intention
 - [x] Changer <a> en <form>
 - [x] Coder bouton dl_js
-- [ ] Retour d'expérience
-- [ ] Diagrammes / Croquis / Schémas
+- [x] Retour d'expérience
+- [x] Diagrammes / Croquis / Schémas
 - [ ] Coverage
 - [ ] XTreme Programming
 - [ ] Plan de tests

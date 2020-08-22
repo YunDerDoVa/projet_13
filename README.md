@@ -4,6 +4,19 @@
 ## Note d'Intention
 *click here : https://github.com/GoswaTech/projet_13/blob/master/INTENTION.md*
 
+## Short History
+
+We are in a giant high-tech tree and only JavaScript exists. To live, you need to code
+beautiful backgrounds. You are in a tree, don't forget it.
+
+## Installed Django Apps
+
+- door : This package is the 'auth' part of the tree.
+- hall : This package is the exposition room of the tree.
+- house : This package is the center of the social part.
+- table : This package contain the tables of Digital Art.
+- library : This package is the learning room of the tree.
+
 ## TeamWork
 
 ### Dev
