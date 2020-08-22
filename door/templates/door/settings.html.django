@@ -3,10 +3,6 @@
 {% load static %}
 
 
-{% block stylesheets %}
-  <link rel="stylesheet" href="{% static "door/css/settings.css" %}">
-{% endblock stylesheets %}
-
 {% block content %}
 
   <h1 class="mb-4">Settings</h1>
