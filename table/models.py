@@ -22,13 +22,13 @@ class TablePost(models.Model):
 
     def add_like(self, like_from, **kwargs):
         like = not kwargs.pop('dislike', False)
-        TableLike.objects.create(like_from=like_from, post=self, like=like)
+        table_like = TableLike.objects.create(like_from=like_from, post=self, like=like)
 
         if like:
             self.number_of_like =+ 1
             self.save()
 
-        return like
+        return table_like
 
     def is_background(self):
         return self.IS_BACKGROUND
