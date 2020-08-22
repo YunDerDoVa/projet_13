@@ -13,6 +13,7 @@ django-debug-toolbar = "*"
 django-markdown-deux = "*"
 sentry-sdk = "*"
 requests = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.6"
