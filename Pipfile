@@ -12,6 +12,7 @@ coverage = "*"
 django-debug-toolbar = "*"
 django-markdown-deux = "*"
 sentry-sdk = "*"
+requests = "*"
 
 [requires]
 python_version = "3.6"
