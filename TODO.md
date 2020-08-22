@@ -6,5 +6,6 @@
 - [ ] Coverage
 - [ ] XTreme Programming
 - [ ] Plan de tests
+- [ ] Sentry
 - [ ] User Stories
 - [ ] Déploiement
