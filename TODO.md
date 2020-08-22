@@ -5,7 +5,7 @@
 - [x] Diagrammes / Croquis / Schémas
 - [ ] Coverage
 - [x] XTreme Programming
-- [ ] Plan de tests
+- [x] Plan de tests
 - [ ] Sentry
 - [ ] User Stories
 - [ ] Déploiement
