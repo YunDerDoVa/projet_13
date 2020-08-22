@@ -4,7 +4,7 @@
 - [x] Retour d'expérience
 - [x] Diagrammes / Croquis / Schémas
 - [ ] Coverage
-- [ ] XTreme Programming
+- [x] XTreme Programming
 - [ ] Plan de tests
 - [ ] Sentry
 - [ ] User Stories

@@ -146,3 +146,17 @@ LOGIN_REDIRECT_URL = 'dashboard'
 
 # TotalVirus
 TOTALVIRUS_API_KEY = os.environ.get('TOTALVIRUS_API_KEY', None)
+
+# Sentry
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
+
+sentry_sdk.init(
+    dsn="https://9a4e31bf536b4f19939c46da06948138@o419717.ingest.sentry.io/5400396",
+    integrations=[DjangoIntegration()],
+    traces_sample_rate = 1.0,
+
+    # If you wish to associate users to errors (assuming you are using
+    # django.contrib.auth) you may enable sending PII data.
+    send_default_pii=True
+)
