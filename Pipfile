@@ -14,6 +14,7 @@ django-markdown-deux = "*"
 sentry-sdk = "*"
 requests = "*"
 gunicorn = "*"
+django-heroku = "*"
 
 [requires]
 python_version = "3.6"
