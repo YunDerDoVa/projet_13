@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '04p_d^@)^bucp&sns1#l+#9x3nf*!6bqwajh(zgnxae_s2bhp='
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', None)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -145,7 +145,7 @@ LOGOUT_REDIRECT_URL = 'index'
 LOGIN_REDIRECT_URL = 'dashboard'
 
 # TotalVirus
-TOTALVIRUS_API_KEY = os.environ.get('TOTALVIRUS_API_KEY', None)
+TOTALVIRUS_API_KEY = os.getenv('TOTALVIRUS_API_KEY', None)
 
 # Sentry
 import sentry_sdk
