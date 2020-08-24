@@ -9,3 +9,9 @@
 - [x] Plan de tests
 - [x] Sentry
 - [x] Déploiement
+
+- [ ] Faille XSS
+- [ ] Erreurs 500
+- [ ] Nom des packages
+- [ ] Survoler Travis et Sentry
+- [ ] Durée de 15min à 20min

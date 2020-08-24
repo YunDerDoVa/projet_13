@@ -2,7 +2,7 @@
 *Développez votre créativité digitale avec Digital Art !*
 
 ## Note d'Intention
-*click here : https://github.com/GoswaTech/projet_13/blob/master/INTENTION.md*
+*click here : https://github.com/GoswaTech/projet_13/blob/master/openclassrooms/INTENTION.md*
 
 ## Short History
 
