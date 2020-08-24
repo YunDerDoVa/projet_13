@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
 
 
@@ -50,7 +50,7 @@ def living_room(request, user_id):
     """ The living_room is like the 'Facebook wall'. All your publics
     activities are visible on the page. """
 
-    user = User.objects.get(id=user_id)
+    user = get_object_or_404(User, id=user_id)
 
     posts = TablePost.objects.filter(user=user)
 
