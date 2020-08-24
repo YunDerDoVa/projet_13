@@ -32,6 +32,7 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarProfile">
             <a class="dropdown-item" href="{% url 'living_room' user_id=request.user.id %}">Living Room</a>
+            <a class="dropdown-item" href="{% url 'table_publish' %}">Publish New Script</a>
             <a class="dropdown-item" href="{% url 'settings' %}">Settings</a>
             <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
           </div>

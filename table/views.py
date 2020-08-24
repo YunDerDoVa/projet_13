@@ -10,11 +10,12 @@ def post(request, post_id):
 
     table_post = TablePost.objects.get(id=post_id)
 
-    if TableLike.check_liked(table_post, request.user):
-        table_post.is_liked = True
+    if request.user.is_authenticated:
+        if TableLike.check_liked(table_post, request.user):
+            table_post.is_liked = True
 
-    if TableLike.check_disliked(table_post, request.user):
-        table_post.is_disliked = True
+        if TableLike.check_disliked(table_post, request.user):
+            table_post.is_disliked = True
 
     context = {
         'post': table_post,
@@ -31,12 +32,12 @@ def publish(request):
     form = PostForm(instance=table_post)
 
     if request.method == 'POST':
-        form = PostForm(request.POST)
+        form = PostForm(request.POST, instance=table_post)
 
         if form.is_valid():
             table_post = form.save()
 
-            return redirect('post', post_id=table_post.id)
+            return redirect('table_post', post_id=table_post.id)
 
     context = {
         'form': form,
@@ -54,20 +55,12 @@ def edit(request, post_id):
     form = PostForm(instance=table_post)
 
     if request.method == 'POST':
-        form = PostForm(request.POST)
+        form = PostForm(request.POST, instance=table_post)
 
         if form.is_valid():
-            cd = form.cleaned_data
-            table_post.title = cd['title']
-            table_post.description = cd['description']
-            table_post.readme = cd['readme']
-            table_post.script_js = cd['script_js']
-            table_post.style_css = cd['style_css']
-            table_post.private_psot = cd['private_post']
+            form.save()
 
-            table_post.save()
-
-            return redirect('post', post_id=post_id)
+            return redirect('table_post', post_id=post_id)
 
     context = {
         'form': form,

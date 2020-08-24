@@ -5,43 +5,45 @@
     {{ post.user.username }}
   </a>
 
-  {% if post.user != request.user %}
+  {% if request.user.is_authenticated %}
+    {% if post.user != request.user %}
+      {% if post.is_liked %}
+        <form class="col-lg-4 col-6 my-1"
+        action="{% url 'like_post' post_id=post.id like_from_id=request.user.id %}?next={{ request.get_full_path }}" method="post">
+          {% csrf_token %}
+          <button class="w-100 btn btn-liked" type="submit" name="submit">Liked</button>
+        </form>
 
-  {% if post.is_liked %}
-    <form class="col-lg-4 col-6 my-1"
-    action="{% url 'like_post' post_id=post.id like_from_id=request.user.id %}?next={{ request.get_full_path }}" method="post">
-      {% csrf_token %}
-      <button class="w-100 btn btn-liked" type="submit" name="submit">Liked</button>
-    </form>
+      {% else %}
+        <form class="col-lg-4 col-6 my-1"
+        action="{% url 'like_post' post_id=post.id like_from_id=request.user.id %}?next={{ request.get_full_path }}" method="post">
+          {% csrf_token %}
+          <button class="w-100 btn btn-like" type="submit" name="submit">Like</button>
+        </form>
 
-  {% else %}
-    <form class="col-lg-4 col-6 my-1"
-    action="{% url 'like_post' post_id=post.id like_from_id=request.user.id %}?next={{ request.get_full_path }}" method="post">
-      {% csrf_token %}
-      <button class="w-100 btn btn-like" type="submit" name="submit">Like</button>
-    </form>
+      {% endif %}
 
-  {% endif %}
+      {% if post.is_disliked %}
+        <form class="col-lg-4 col-6 my-1"
+        action="{% url 'dislike_post' post_id=post.id like_from_id=request.user.id %}?next={{ request.get_full_path }}" method="post">
+          {% csrf_token %}
+          <button class="w-100 btn btn-disliked" type="submit" name="submit">Disliked</button>
+        </form>
 
-  {% if post.is_disliked %}
-    <form class="col-lg-4 col-6 my-1"
-    action="{% url 'dislike_post' post_id=post.id like_from_id=request.user.id %}?next={{ request.get_full_path }}" method="post">
-      {% csrf_token %}
-      <button class="w-100 btn btn-disliked" type="submit" name="submit">Disliked</button>
-    </form>
+      {% else %}
+        <form class="col-lg-4 col-6 my-1"
+        action="{% url 'dislike_post' post_id=post.id like_from_id=request.user.id %}?next={{ request.get_full_path }}" method="post">
+          {% csrf_token %}
+          <button class="w-100 btn btn-dislike" type="submit" name="submit">Dislike</button>
+        </form>
 
-  {% else %}
-    <form class="col-lg-4 col-6 my-1"
-    action="{% url 'dislike_post' post_id=post.id like_from_id=request.user.id %}?next={{ request.get_full_path }}" method="post">
-      {% csrf_token %}
-      <button class="w-100 btn btn-dislike" type="submit" name="submit">Dislike</button>
-    </form>
+      {% endif %}
 
-  {% endif %}
+    {% else %}
+      <a class="mx-2 btn btn-warning" href="{% url 'table_edit' post_id=post.id %}">Edit {{ post.title }}</a>
 
-  {% else %}
-
-    <a class="mx-2 btn btn-warning" href="{% url 'table_edit' post_id=post.id %}">Edit {{ post.title }}</a>
+    {% endif %}
+    <!-- If Post Liked -->
 
   {% endif %}
 

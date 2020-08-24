@@ -53,12 +53,13 @@ def living_room(request, user_id):
 
     posts = TablePost.objects.filter(user=user)
 
-    for post in posts:
-        if TableLike.check_liked(post, request.user):
-            post.is_liked = True
+    if request.user.is_authenticated:
+        for post in posts:
+            if TableLike.check_liked(post, request.user):
+                post.is_liked = True
 
-        if TableLike.check_disliked(post, request.user):
-            post.is_disliked = True
+            if TableLike.check_disliked(post, request.user):
+                post.is_disliked = True
 
     context = {
         'user': user,
