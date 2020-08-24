@@ -3,7 +3,7 @@
 - [x] Coder bouton dl_js
 - [x] Retour d'expérience
 - [x] Diagrammes / Croquis / Schémas
-- [ ] Coverage
+- [x] Coverage
 - [x] DB_LABEL
 - [x] XTreme Programming
 - [x] Plan de tests
