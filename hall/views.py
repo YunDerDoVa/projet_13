@@ -19,6 +19,7 @@ def index(request):
 
 
 def discover(request):
+    """ This view show a random list of posts. """
 
     discover_tool = DiscoverTool()
 

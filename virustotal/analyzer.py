@@ -11,6 +11,8 @@ class Analyzer:
         self.params = {'apikey': api_key}
 
     def scan_file(self, file):
+        """ This method scan a file passed in parameter to check
+        return a virustotal's rapport. """
 
         files = {'file': (file.filename, file.open('rb'))}
 

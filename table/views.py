@@ -6,6 +6,8 @@ from .forms import PostForm
 
 # Create your views here.
 def post(request, post_id):
+    """ This view displays the post in details. """
+
     table_post = TablePost.objects.get(id=post_id)
 
     if TableLike.check_liked(table_post, request.user):
@@ -22,6 +24,7 @@ def post(request, post_id):
 
 
 def publish(request):
+    """ This view displays a form to create a new post. """
 
     table_post = TablePost(user=request.user)
 
@@ -44,6 +47,7 @@ def publish(request):
 
 
 def edit(request, post_id):
+    """ This view displays a form to edit an existing post. """
 
     table_post = TablePost.objects.get(id=post_id, user=request.user)
 

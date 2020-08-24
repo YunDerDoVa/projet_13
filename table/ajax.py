@@ -7,6 +7,10 @@ from door.models import User
 
 
 def like_post(request, post_id, like_from_id):
+    """ This view add or edit a TableLike object if it exists.
+    Today, it redirects to the <GET['next']> value.
+    In the future, it will returns a JSON to work with an
+    AJAX component. This view sets 'like' field to False. """
 
     post = TablePost.objects.get(id=post_id)
     like_from = User.objects.get(id=like_from_id)
@@ -29,6 +33,11 @@ def like_post(request, post_id, like_from_id):
 
 
 def dislike_post(request, post_id, like_from_id):
+    """ This view add or edit a TableLike object if it exists.
+    Today, it redirects to the <GET['next']> value.
+    In the future, it will returns a JSON to work with an
+    AJAX component. This view sets 'like' field to False. """
+
     post = TablePost.objects.get(id=post_id)
     like_from = User.objects.get(id=like_from_id)
 

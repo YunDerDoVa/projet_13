@@ -11,6 +11,9 @@ TEMPDIR = os.path.dirname(os.path.abspath(__file__))
 
 
 def download_script(request, post_id):
+    """ This view returns a FileResponse with the post's script_js field in
+    a .js file. """
+
     post = TablePost.objects.get(id=post_id)
 
     filename = 'script_' + str(post.id) + '.js'
@@ -23,6 +26,6 @@ def download_script(request, post_id):
 
     file = open(path, mode='rb')
 
-    response = FileResponse(file)
+    response = FileResponse(file, as_attachment=True, filename=filename)
 
     return response

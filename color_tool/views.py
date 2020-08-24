@@ -5,6 +5,7 @@ import requests
 
 # Create your views here.
 def screen(request):
+    """ This view show a colored screen with differents color values """
 
     if 'hexa' in request.GET.keys():
         hexa = request.GET.get('hexa')

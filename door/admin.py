@@ -7,10 +7,14 @@ from .models import Privacy
 
 # Register your models here.
 class CustomUserAdmin(UserAdmin):
+    """ It is the UserAdmin model to administrate AbstractUser model. """
+
     model = CustomUser
 
 
 class PrivacyAdmin(admin.ModelAdmin):
+    """ We want to administrate Privacy. """
+
     model = Privacy
 
 

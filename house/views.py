@@ -7,6 +7,8 @@ from door.models import User
 
 # Create your views here.
 def dashboard(request):
+    """ The dashboard displays some buttons to navigate into our personal
+    space. (our house) """
 
     context = {
         'user': request.user,
@@ -16,6 +18,7 @@ def dashboard(request):
 
 
 def my_library(request):
+    """ The 'my_library' view displays all scripts we posted on the website. """
 
     posts = TablePost.objects.filter(user=request.user).all()
 
@@ -27,6 +30,7 @@ def my_library(request):
 
 
 def my_likes(request):
+    """ The 'my_likes' view displays all posts we liked on the website. """
 
     posts = TablePost.objects.filter(table_like_set__like_from=request.user,
         table_like_set__like=True)
@@ -42,6 +46,8 @@ def my_likes(request):
 
 
 def living_room(request, user_id):
+    """ The living_room is like the 'Facebook wall'. All your publics
+    activities are visible on the page. """
 
     user = User.objects.get(id=user_id)
 

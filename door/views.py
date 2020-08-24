@@ -38,6 +38,8 @@ def register(request):
 
 
 def settings(request):
+    """ This view show us our settings forms. If a form is edited, it add a
+    toast to the toasts' list to give a feedback to the user. """
 
     form = SettingsForm(instance=request.user)
     privacy_form = PrivacySettingsForm(instance=request.user.privacy_settings)

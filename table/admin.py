@@ -5,10 +5,14 @@ from .models import TablePost, TableLike, TableComment
 
 # Register your models here.
 class TablePostAdmin(admin.ModelAdmin):
+    """ TablePost's admin model. """
+
     model = TablePost
 
 
 class TableLikeAdmin(admin.ModelAdmin):
+    """ TablePost's admin model. """
+    
     model = TableLike
 
 

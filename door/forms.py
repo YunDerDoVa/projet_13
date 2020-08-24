@@ -3,6 +3,7 @@ from .models import User, Privacy
 
 
 class RegisterForm(forms.Form):
+    """ A register form with all fields we need to create a new user. """
 
     username = forms.CharField(
         label='Username',
@@ -19,6 +20,7 @@ class RegisterForm(forms.Form):
 
 
 class SettingsForm(forms.ModelForm):
+    """ This form is necessary to update Users' Profile. """
 
     class Meta:
         model = User
@@ -26,6 +28,7 @@ class SettingsForm(forms.ModelForm):
 
 
 class PrivacySettingsForm(forms.ModelForm):
+    """ This form is necessary to update privacy settings. """
 
     class Meta:
         model = Privacy
