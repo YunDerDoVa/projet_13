@@ -1,4 +1,5 @@
 # Plan de Présentation
+*Durée de 15min à 20min*
 
 ## Mise en context
 
@@ -14,9 +15,9 @@
 - library : views
 - table : publish / edit / post / render
 
-## Sentry
+## Sentry (survoler)
 
-## Travis-CI
+## Travis-CI (survoler)
 
 ## Plan de test
 
