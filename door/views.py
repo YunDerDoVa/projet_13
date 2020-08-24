@@ -37,6 +37,7 @@ def register(request):
     return render(request, 'door/register.html.django', context)
 
 
+@login_required(login_url='login')
 def settings(request):
     """ This view show us our settings forms. If a form is edited, it add a
     toast to the toasts' list to give a feedback to the user. """

@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 
 
 from table.models import TablePost, TableLike
@@ -6,6 +7,7 @@ from door.models import User
 
 
 # Create your views here.
+@login_required(login_url='login')
 def dashboard(request):
     """ The dashboard displays some buttons to navigate into our personal
     space. (our house) """
@@ -17,6 +19,7 @@ def dashboard(request):
     return render(request, 'house/dashboard.html.django', context)
 
 
+@login_required(login_url='login')
 def my_library(request):
     """ The 'my_library' view displays all scripts we posted on the website. """
 
@@ -29,6 +32,7 @@ def my_library(request):
     return render(request, 'house/my_library.html.django', context)
 
 
+@login_required(login_url='login')
 def my_likes(request):
     """ The 'my_likes' view displays all posts we liked on the website. """
 
@@ -45,6 +49,7 @@ def my_likes(request):
     return render(request, 'house/my_likes.html.django', context)
 
 
+@login_required(login_url='login')
 def living_room(request, user_id):
     """ The living_room is like the 'Facebook wall'. All your publics
     activities are visible on the page. """

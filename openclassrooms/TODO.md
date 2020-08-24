@@ -11,10 +11,13 @@
 - [x] Déploiement
 
 - [ ] Faille XSS
-- [ ] Erreurs 500
-  - [ ] Edit post
+- [x] Erreurs 500
+  - [x] Discover
+  - [x] Post
+  - [x] Edit post
 - [ ] Nom des packages
 - [ ] Survoler Travis et Sentry
 - [ ] Durée de 15min à 20min
 - [ ] Replacer digitaltesttools et color_tool dans leur context
 - [ ] Enlever le user du context dans dashboard
+- [x] Login Required

@@ -24,6 +24,7 @@ def post(request, post_id):
     return render(request, 'table/post.html.django', context)
 
 
+@login_required(login_url='login')
 def publish(request):
     """ This view displays a form to create a new post. """
 
@@ -47,6 +48,7 @@ def publish(request):
     return render(request, 'table/publish_post.html.django', context)
 
 
+@login_required(login_url='login')
 def edit(request, post_id):
     """ This view displays a form to edit an existing post. """
 
