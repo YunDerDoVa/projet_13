@@ -15,3 +15,5 @@
 - [ ] Nom des packages
 - [ ] Survoler Travis et Sentry
 - [ ] Durée de 15min à 20min
+- [ ] Replacer digitaltesttools et color_tool dans leur context
+- [ ] Enlever le user du context dans dashboard
