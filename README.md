@@ -17,6 +17,34 @@ beautiful backgrounds. You are in a tree, don't forget it.
 - table : This package contain the tables of Digital Art.
 - library : This package is the learning room of the tree.
 
+### Door
+
+The door is where we enter in the house. It's in this app where we can
+find the auth part of the project.
+
+**Static Files are written in this app.**
+
+### Hall
+
+The hall is the public part of our project. It is a commun space with
+all users.
+
+### House
+
+The house is specific to the user experience. We can find scripts,
+likes, profile. Their are a living room in the house to expose
+tables to the public.
+
+### Library
+
+It's at this app we will develop the documentation's part of
+the project.
+
+### Table
+
+It's a table where painters draws in the metaphoric way. This app
+manage all posts, likes or comments created by users.
+
 ## TeamWork
 
 ### Dev
