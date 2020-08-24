@@ -12,11 +12,7 @@ def dashboard(request):
     """ The dashboard displays some buttons to navigate into our personal
     space. (our house) """
 
-    context = {
-        'user': request.user,
-    }
-
-    return render(request, 'house/dashboard.html.django', context)
+    return render(request, 'house/dashboard.html.django')
 
 
 @login_required(login_url='login')

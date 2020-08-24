@@ -1,6 +1,6 @@
 # Color Tool
 
-This package is an easter egg of the website.
+This package is a tool for developers to convert rgb, hexa, hsl colors.
 
 ## Views
 - screen

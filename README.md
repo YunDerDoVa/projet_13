@@ -22,6 +22,11 @@ beautiful backgrounds. You are in a tree, don't forget it.
 The door is where we enter in the house. It's in this app where we can
 find the auth part of the project.
 
+Functionnalities :
+- **view** User authentification
+- **view** User settings *(auth required)*
+- **model** Create New User
+
 **Static Files are written in this app.**
 
 ### Hall
@@ -29,21 +34,39 @@ find the auth part of the project.
 The hall is the public part of our project. It is a commun space with
 all users.
 
+Functionnalities :
+- **view** Website Index
+- **view** Discover Posts
+
 ### House
 
 The house is specific to the user experience. We can find scripts,
 likes, profile. Their are a living room in the house to expose
 tables to the public.
 
+Functionnalities :
+- **view** Dashboard *(auth required)*
+- **view** Likes List *(auth required)*
+- **view** Owned Posts List *(auth required)*
+- **view** Account's Public Page *(auth required)*
+
 ### Library
 
 It's at this app we will develop the documentation's part of
 the project.
 
+Functionnalities :
+- **view** Documentation Page
+
 ### Table
 
 It's a table where painters draws in the metaphoric way. This app
 manage all posts, likes or comments created by users.
+
+Functionnalities :
+- **view** Create and Edit Post *(auth required)*
+- **view** View Post
+- **model** Like / Dislike Post *(auth reqiured)*
 
 ## TeamWork
 

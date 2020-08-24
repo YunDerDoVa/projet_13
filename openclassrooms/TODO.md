@@ -15,8 +15,7 @@
   - [x] Discover
   - [x] Post
   - [x] Edit post
-- [ ] Nom des packages
-- [ ] Durée de 15min à 20min
-- [ ] Replacer digitaltesttools et color_tool dans leur context
-- [ ] Enlever le user du context dans dashboard
+- [x] Nom des packages
+- [x] Replacer digitaltesttools et color_tool dans leur context
+- [x] Enlever le user du context dans dashboard
 - [x] Login Required

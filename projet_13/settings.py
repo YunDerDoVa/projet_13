@@ -49,7 +49,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'debug_toolbar',
-    #'digitaltesttools.apps.DigitaltesttoolsConfig',
     'door.apps.DoorConfig',
     'hall.apps.HallConfig',
     'house.apps.HouseConfig',
