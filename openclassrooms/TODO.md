@@ -12,6 +12,7 @@
 
 - [ ] Faille XSS
 - [ ] Erreurs 500
+  - [ ] Edit post
 - [ ] Nom des packages
 - [ ] Survoler Travis et Sentry
 - [ ] Durée de 15min à 20min
