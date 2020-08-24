@@ -4,9 +4,8 @@
 - [x] Retour d'expérience
 - [x] Diagrammes / Croquis / Schémas
 - [ ] Coverage
-- [ ] DB_LABEL
+- [x] DB_LABEL
 - [x] XTreme Programming
 - [x] Plan de tests
 - [x] Sentry
-- [ ] User Stories
 - [x] Déploiement
