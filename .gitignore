@@ -1,2 +1,3 @@
 .env
 media/script_*.js
+__pycache__
