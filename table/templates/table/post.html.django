@@ -7,6 +7,10 @@
 {% block stylesheets %}
   <link rel="stylesheet" href="{% static "table/css/post.css" %}">
   <link rel="stylesheet" href="{% static "table/css/render.css" %}">
+  <!-- Highlighting -->
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/default.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
 {% endblock stylesheets %}
 
 {% block content %}
@@ -15,20 +19,37 @@
 
   <div class="row">
 
-    <div class="col-md-8 col">
+    <div class="col-md-8 col-12">
 
       {% if post.is_background %}
         {% include "table/renders/background_render.html.django" %}
       {% endif %}
 
-      <a class="btn btn-primary"
-      href="{% url 'download_script' post_id=post.id %}"
-      target="_blank">
-        Lire le script
-      </a>
+      <div class="row">
+        <div class="col-6 col-md-4">
+          <a class="btn btn-primary w-100"
+          href="{% url 'download_script' post_id=post.id %}"
+          target="_blank">
+            Télécharger le script
+          </a>
+        </div>
+        <div class="col-6 col-md-4">
+          <a class="btn btn-primary w-100"
+          href="javascript:showScript('text_script_{{ post.id }}')">
+            Lire le script
+          </a>
+        </div>
+        <div class="col-12">
+          <pre id="text_script_{{ post.id }}" class="text-script" data-display='none'>
+            <code class="lang-javascript card bg-secondary">
+              {{ post.script_js }}
+            </code>
+          </pre>
+        </div>
+      </div>
     </div>
 
-    <div class="col-md-4">
+    <div class="col-md-4 col-12">
 
       {% include "table/social/post_actions.html.django" %}
 
@@ -48,3 +69,8 @@
   <!-- /.row -->
 
 {% endblock content %}
+
+
+{% block javascripts %}
+<script type="text/javascript" src="{% static "table/js/post.js" %}"></script>
+{% endblock javascripts %}
