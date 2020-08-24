@@ -160,7 +160,8 @@ LOGIN_REDIRECT_URL = 'dashboard'
 TOTALVIRUS_API_KEY = os.getenv('TOTALVIRUS_API_KEY', None)
 
 # Heroku
-django_heroku.settings(locals())
+if not DEBUG:
+    django_heroku.settings(locals())
 
 # Sentry
 import sentry_sdk
