@@ -1,14 +1,20 @@
 # Door
 
-This package is the 'auth' part of my library.
-In a few moments, I will explain you his history...
+This package is the 'auth' part of the tree. We can find :
+  - User Model
+  - Register View
+  - Auth URLs (login, logout, register)
+  - User Settings
 
 ## Views
 - register
+- settings
 
 ## Urls
-- login
-- logout
+- login (django)
+- logout (django)
+- register
+- settings
 
 ## Models
 - Privacy
