@@ -11,3 +11,8 @@ J'ai donc supprimé virustotal car il ne servira plus à grand-chose.
 ## Tests
 
 J'ai changé l'emplacement des tests pour les mettre dans la racine.
+
+## Compréhension des packages
+
+Le README devrait servir à mieux appréhender l'architecture et surtout le
+nomage de chaque package.
