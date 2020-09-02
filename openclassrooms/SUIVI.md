@@ -1,5 +1,13 @@
 # Suivi
 
+## Retour de la soutenance
+
+J'ai bien réglé la majorité des erreurs retourné par l'évaluateur, il ne me
+reste plus qu'à boucher les failles XSS avant de terminer d'écrire les tests
+et faire le ménage dans les packages comme 'digitaltesttools'
+(qui doit être dans le répertoire des tests) et color_tool (qui doit être soit
+intégré au site dans la librairie, soit supprimé ou soit devenir autre-chose).
+
 ## Résolution des failles XSS
 
 Le problème principale vient des failles XSS. L'idée pour les boucher serait
