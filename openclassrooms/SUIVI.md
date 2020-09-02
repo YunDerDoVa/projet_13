@@ -13,7 +13,7 @@ intégré au site dans la librairie, soit supprimé ou soit devenir autre-chose)
 Le problème principale vient des failles XSS. L'idée pour les boucher serait
 d'interdire les mots comme 'document', 'getElementById' ou 'getParent' et de proposer une
 classe appelée 'DigitalTable' (par exemple) qui proposerait des fonctions
-de remplacement afin d'éviter aux utilisateurs de sortir de leur <div>.
+de remplacement afin d'éviter aux utilisateurs de sortir de leur div.
 J'ai donc supprimé virustotal car il ne servira plus à grand-chose.
 
 ## Tests
