@@ -7,6 +7,12 @@
     {% if post.style_css %}
       <link rel="stylesheet" href="{{ post.style_css.url }}">
     {% endif %}
+    <style media="screen">
+      #script_div {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
   </head>
   <body>
     <div class="script_div" class="digital-art-script"></div>
