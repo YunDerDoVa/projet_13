@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Digital Art Iframe</title>
+
+    {% if post.style_css %}
+      <link rel="stylesheet" href="{{ post.style_css.url }}">
+    {% endif %}
+  </head>
+  <body>
+    <div class="script_div" class="digital-art-script"></div>
+
+    <script type="text/javascript">
+      background_id = 'script_div';
+    </script>
+    <script type="text/javascript" src="{% url 'download_script' post_id=post.id %}"></script>
+  </body>
+</html>

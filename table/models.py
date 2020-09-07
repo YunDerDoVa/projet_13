@@ -43,7 +43,7 @@ class TablePost(models.Model):
         It is the template html code to code a new background script. """
 
         if self.is_background():
-            return "<div id=\"background" + str(self.id) + "\" class=\"digital-art-background\">"
+            return "<div id=\"script_div\" class=\"digital-art-script\">"
         else:
             return None
 

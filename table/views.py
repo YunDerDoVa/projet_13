@@ -71,3 +71,7 @@ def edit(request, post_id):
     }
 
     return render(request, 'table/edit_post.html.django', context)
+
+
+def iframe(request, post_id):
+    render(request, 'table/')
