@@ -158,7 +158,7 @@ LOGIN_REDIRECT_URL = 'dashboard'
 
 # Deployment
 if not DEBUG:
-    SECURE_SSL_REDIRECT = True
+    pass
 
 # Sentry
 import sentry_sdk
