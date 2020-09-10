@@ -158,10 +158,7 @@ LOGIN_REDIRECT_URL = 'dashboard'
 
 # Deployment
 if not DEBUG:
-    SESSION_COOKIE_SECURE = True
-    CSRF_COOKIE_SECURE = True
     SECURE_SSL_REDIRECT = True
-    SECURE_HSTS_SECONDS = 30
 
 # Sentry
 import sentry_sdk
