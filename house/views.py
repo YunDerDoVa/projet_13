@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404
+from django.http import Http404
 from django.contrib.auth.decorators import login_required
 
 
@@ -52,7 +53,13 @@ def living_room(request, user_id):
 
     user = get_object_or_404(User, id=user_id)
 
-    posts = TablePost.objects.filter(user=user)
+    if user.privacy_settings.private_profile:
+        return Http404('User not found...')
+
+    if not user.privacy_settings.private_posts:
+        posts = TablePost.objects.filter(user=user, private_post=False)
+    else:
+        posts = None
 
     if request.user.is_authenticated:
         for post in posts:
