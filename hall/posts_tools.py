@@ -12,7 +12,7 @@ class DiscoverTool:
         """ This method return TablePost queryset. Order it randomly
         and reorder it with a simple algorithm. """
 
-        posts = TablePost.objects.all()
+        posts = TablePost.objects.order_by('-creation_date').all()
 
         posts = posts[:7]
 

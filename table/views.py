@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.http import Http404
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.clickjacking import xframe_options_exempt
 
@@ -10,7 +11,10 @@ from .forms import PostForm
 def post(request, post_id):
     """ This view displays the post in details. """
 
-    table_post = TablePost.objects.get(id=post_id)
+    try:
+        table_post = TablePost.objects.get(id=post_id)
+    except TablePost.DoesNotExist:
+        raise Http404('Post not found...')
 
     if request.user.is_authenticated:
         if TableLike.check_liked(table_post, request.user):
@@ -54,7 +58,10 @@ def publish(request):
 def edit(request, post_id):
     """ This view displays a form to edit an existing post. """
 
-    table_post = TablePost.objects.get(id=post_id, user=request.user)
+    try:
+        table_post = TablePost.objects.get(id=post_id, user=request.user)
+    except TablePost.DoesNotExist:
+        raise Http404('Post not found...')
 
     form = PostForm(instance=table_post)
 
@@ -77,7 +84,10 @@ def edit(request, post_id):
 @xframe_options_exempt
 def iframe(request, post_id):
 
-    post = TablePost.objects.get(id=post_id)
+    try:
+        post = TablePost.objects.get(id=post_id)
+    except TablePost.DoesNotExist:
+        raise Http404('Post not found...')
 
     context = {
         'post': post,

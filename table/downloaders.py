@@ -1,5 +1,5 @@
 from django.shortcuts import redirect
-from django.http import FileResponse
+from django.http import FileResponse, Http404
 from django.conf import settings
 
 from .models import TablePost
@@ -14,7 +14,10 @@ def download_script(request, post_id):
     """ This view returns a FileResponse with the post's script_js field in
     a .js file. """
 
-    post = TablePost.objects.get(id=post_id)
+    try:
+        post = TablePost.objects.get(id=post_id)
+    except TablePost.DoesNotExist:
+        raise Http404('Post not found...')
 
     filename = 'script_' + str(post.id) + '.js'
     path = settings.MEDIA_ROOT + '\\' + filename

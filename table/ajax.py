@@ -1,5 +1,5 @@
 from django.shortcuts import redirect
-from django.http import JsonResponse
+from django.http import JsonResponse, Http404
 from django.db import IntegrityError
 
 from .models import TablePost, TableLike
@@ -12,13 +12,18 @@ def like_post(request, post_id, like_from_id):
     In the future, it will returns a JSON to work with an
     AJAX component. This view sets 'like' field to False. """
 
-    post = TablePost.objects.get(id=post_id)
-    like_from = User.objects.get(id=like_from_id)
-
     try:
-        like = TableLike.objects.get(post=post, like_from=like_from)
+        post = TablePost.objects.get(id=post_id)
+        like_from = User.objects.get(id=like_from_id)
+    except TablePost.DoesNotExist:
+        raise Http404('Post not found...')
+    except User.DoesNotExist:
+        raise Http404('User not found...')
+
+    like = TableLike.objects.filter(post=post, like_from=like_from).first()
+    if like:
         like.edit_like(True)
-    except:
+    else:
         like = post.add_like(like_from)
 
     json = {
@@ -38,8 +43,13 @@ def dislike_post(request, post_id, like_from_id):
     In the future, it will returns a JSON to work with an
     AJAX component. This view sets 'like' field to False. """
 
-    post = TablePost.objects.get(id=post_id)
-    like_from = User.objects.get(id=like_from_id)
+    try:
+        post = TablePost.objects.get(id=post_id)
+        like_from = User.objects.get(id=like_from_id)
+    except TablePost.DoesNotExist:
+        raise Http404('Post not found...')
+    except User.DoesNotExist:
+        raise Http404('User not found...')
 
     like = TableLike.objects.filter(post=post, like_from=like_from).first()
     if like:
