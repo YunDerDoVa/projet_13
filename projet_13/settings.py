@@ -156,12 +156,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 LOGOUT_REDIRECT_URL = 'index'
 LOGIN_REDIRECT_URL = 'dashboard'
 
-# TotalVirus
-TOTALVIRUS_API_KEY = os.getenv('TOTALVIRUS_API_KEY', None)
-
-# Heroku
+# Deployment
 if not DEBUG:
-    django_heroku.settings(locals())
+    SESSION_COOKIE_SECURE = True
 
 # Sentry
 import sentry_sdk
