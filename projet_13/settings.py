@@ -32,6 +32,7 @@ else:
 ALLOWED_HOSTS = [
     '127.0.0.1',
     'projet13-an.herokuapp.com',
+    'projet13.adenblack.fr',
 ]
 
 INTERNAL_IPS = [
