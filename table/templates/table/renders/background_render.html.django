@@ -7,7 +7,8 @@
       allow="accelerometer; ambient-light-sensor; camera; encrypted-media;
       geolocation; gyroscope; microphone; midi; payment; vr"
       allowfullscreen="true" allowtransparency="true" allowpaymentrequest="true"
-      src="{% url 'table_iframe' post_id=post.id %}" width="100%" height="100%">
+      src="{% url 'table_iframe' post_id=post.id %}" width="100%" height="100%"
+      style="border: 0;">
     </iframe>
   </div>
 

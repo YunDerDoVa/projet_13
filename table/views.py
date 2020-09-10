@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.clickjacking import xframe_options_exempt
 
 from .models import TablePost, TableLike
 from .forms import PostForm
@@ -73,5 +74,13 @@ def edit(request, post_id):
     return render(request, 'table/edit_post.html.django', context)
 
 
+@xframe_options_exempt
 def iframe(request, post_id):
-    render(request, 'table/')
+
+    post = TablePost.objects.get(id=post_id)
+
+    context = {
+        'post': post,
+    }
+
+    return render(request, 'table/iframe.html.django', context)

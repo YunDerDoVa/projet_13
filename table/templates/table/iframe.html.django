@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <meta http-equiv="X-Frame-Options" content="sameorigin">
+
     <meta charset="utf-8">
     <title>Digital Art Iframe</title>
 
@@ -8,6 +10,13 @@
       <link rel="stylesheet" href="{{ post.style_css.url }}">
     {% endif %}
     <style media="screen">
+      html {
+        height: 100%
+      }
+      body {
+        height: 100%;
+        margin: 0;
+      }
       #script_div {
         width: 100%;
         height: 100%;
@@ -15,7 +24,7 @@
     </style>
   </head>
   <body>
-    <div class="script_div" class="digital-art-script"></div>
+    <div id="script_div" class="digital-art-script"></div>
 
     <script type="text/javascript">
       background_id = 'script_div';
