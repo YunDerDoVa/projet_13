@@ -3,7 +3,7 @@ from django.test import TestCase
 from door.models import User
 from table.models import TablePost
 from hall.posts_tools import DiscoverTool
-from digitaltesttools.user import create_test_users
+from digitaltesttools.user import get_user_dict
 
 
 class PostsToolTestCase(TestCase):
