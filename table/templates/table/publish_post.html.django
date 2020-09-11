@@ -5,26 +5,19 @@
 
 {% block stylesheets %}
   <link rel="stylesheet" href="{% static "table/css/publish.css" %}">
+  <!-- Highlighting -->
+  <link rel="stylesheet"
+      href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/srcery.min.css">
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
 {% endblock stylesheets %}
 
 {% block content %}
 
 <h1 class="mb-4">Publier un Background</h1>
 
-  <h2>Environnement</h2>
-  <p>
-    <ul>
-      <li>
-        Balise : <strong>DIV</strong>
-      </li>
-      <li>
-        Variable JS : <strong>background_id</strong> (id de la div)
-      </li>
-      <!--li>
-        Fonction JS : main(background_id) (afin de permettre de partager des scripts prêt à l'emploi)
-      </li-->
-    </ul>
-  </p>
+  {% include "table/instructions/background_instructions.html.django" %}
+
   {% include "table/forms/publish_form.html.django" %}
 
 {% endblock content %}

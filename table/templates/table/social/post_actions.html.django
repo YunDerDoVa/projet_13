@@ -1,12 +1,33 @@
 <div class="my-2 row">
 
-  <a class="col-12 col-md-4 btn btn-primary my-1"
-  href="{% url 'living_room' user_id=post.user.id %}">
-    {{ post.user.username }}
-  </a>
+  {% comment %}
+    If user has public privacy
+    This actions is available only if the user have a public privacy.
+  {% endcomment %}
+  {% if not request.user.privacy_settings.private_profile %}
+    <a class="col-12 col-md-4 btn btn-primary mx-1 my-1 d-flex align-items-center justify-content-center"
+    href="{% url 'living_room' user_id=post.user.id %}">
+      {{ post.user.username }}
+    </a>
+  {% endif %}
 
+    {% comment %}
+      If is authenticated
+      If the user is authenticated, it displays the user's actions.
+      Else, it displays nothing else...
+    {% endcomment %}
   {% if request.user.is_authenticated %}
+
+    {# If user is not owner #}
+    {% comment %}
+      If user is not owner
+      If the user is not the owner of the post, he can see the like et dislike buttons.
+      Else, it's logicaly the owner, so the templates displays the edit button.
+    {% endcomment %}
     {% if post.user != request.user %}
+
+
+      {# If liked #}
       {% if post.is_liked %}
         <form class="col-lg-4 col-6 my-1"
         action="{% url 'like_post' post_id=post.id like_from_id=request.user.id %}?next={{ request.get_full_path }}" method="post">
@@ -21,8 +42,11 @@
           <button class="w-100 btn btn-like" type="submit" name="submit">Like</button>
         </form>
 
-      {% endif %}
+      {% endif %} {# End If liked #}
 
+
+
+      {# If disliked #}
       {% if post.is_disliked %}
         <form class="col-lg-4 col-6 my-1"
         action="{% url 'dislike_post' post_id=post.id like_from_id=request.user.id %}?next={{ request.get_full_path }}" method="post">
@@ -37,14 +61,18 @@
           <button class="w-100 btn btn-dislike" type="submit" name="submit">Dislike</button>
         </form>
 
-      {% endif %}
+      {% endif %} {# End If disliked #}
 
-    {% else %}
-      <a class="mx-2 btn btn-warning" href="{% url 'table_edit' post_id=post.id %}">Edit {{ post.title }}</a>
 
-    {% endif %}
-    <!-- If Post Liked -->
+    {% else %} {# Else If user is not owner #}
+      <a class="col-12 col-md-4 btn btn-warning mx-1 my-1 d-flex align-items-center justify-content-center"
+      href="{% url 'table_edit' post_id=post.id %}">
+        Edit {{ post.title }}
+      </a>
 
-  {% endif %}
+    {% endif %} {# End If user is not owner #}
+
+
+  {% endif %} {# End If is authenticated #}
 
 </div>

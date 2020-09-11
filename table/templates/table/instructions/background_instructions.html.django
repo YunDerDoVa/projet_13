@@ -1,0 +1,66 @@
+<div class="instructions card bg-secondary text-dark">
+
+  <h2 class="card-header">Comment ça marche ?</h2>
+
+  <div class="card-body">
+
+    <div class="row small">
+
+      <div class="col-12 col-lg-6">
+
+        <h3>Balise DIV</h3>
+
+        <ul>
+          <li>id="script_div"</li>
+          <li>class="digital-art-script"</li>
+        </ul>
+
+        <p>
+          Votre zone de travail se trouve dans une balise DIV avec un id (script_div) et une classe (digital-art-script).
+        </p>
+
+      </div>
+
+      <div class="col-12 col-lg-6">
+
+        <h3>Variables JS</h3>
+
+        <ul>
+          <li>background_id</li>
+          <li>background_node</li>
+        </ul>
+
+        <p>
+          Vous avez la possibilité de récupérer le noeud directement en écrivant avec la variable js <b>background_node</b>.
+        </p>
+
+      </div>
+
+      <div class="col-12 col-lg-6">
+
+        <h3>Fonction digitalMain()</h3>
+
+        <ul>
+          <li>digitalMain( function )</li>
+        </ul>
+
+        <p>
+          Définissez cette fonction pour activer le script sur notre site. Autrement, il ne sera pas visible par les
+          autres utilisateurs.
+        </p>
+
+      </div>
+
+      <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center">
+
+        <div class="card bg-primary text-light w-100 text-center">
+          <h3 class="card-body">Amusez-vous !</h3>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

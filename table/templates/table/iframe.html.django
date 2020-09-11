@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -24,9 +26,9 @@
   <body>
     <div id="script_div" class="digital-art-script"></div>
 
-    <script type="text/javascript">
-      background_id = 'script_div';
-    </script>
+    <!-- Script d'initialisation digital art script -->
+    <script type="text/javascript" src="{% static "table/js/background/init.js" %}"></script>
+
     <script type="text/javascript" src="{% url 'download_script' post_id=post.id %}"></script>
   </body>
 </html>
