@@ -18,7 +18,8 @@ def dashboard(request):
 
 @login_required(login_url='login')
 def my_library(request):
-    """ The 'my_library' view displays all scripts we posted on the website. """
+    """ The 'my_library' view displays all scripts we posted
+    on the website. """
 
     posts = TablePost.objects.filter(user=request.user).all()
 
