@@ -11,7 +11,10 @@ class PostsToolTestCase(TestCase):
     def setUp(self):
 
         user_dict = get_user_dict(0)
-        user = User.register_new_user(user_dict['username'], user_dict['email'], user_dict['password'])
+        user = User.register_new_user(
+            user_dict['username'],
+            user_dict['email'],
+            user_dict['password'])
 
         TablePost.objects.create(user=user)
 

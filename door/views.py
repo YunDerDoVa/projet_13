@@ -8,7 +8,6 @@ from .forms import RegisterForm, SettingsForm, PrivacySettingsForm
 
 # Create your views here.
 def register(request):
-
     """ This view do it :
     - redirect to dashboard if user is authenticated.
     - register and login a new user for POST requests
@@ -27,7 +26,8 @@ def register(request):
             cd = form.cleaned_data
 
             if cd['password1'] == cd['password2']:
-                user = User.register_new_user(cd['username'], cd['email'], cd['password1'])
+                user = User.register_new_user(
+                    cd['username'], cd['email'], cd['password1'])
                 login(request, user)
                 return redirect('discover')
 
@@ -50,7 +50,8 @@ def settings(request):
 
     if request.method == 'POST':
         form = SettingsForm(request.POST, request.FILES, instance=request.user)
-        privacy_form = PrivacySettingsForm(request.POST, instance=request.user.privacy_settings)
+        privacy_form = PrivacySettingsForm(
+            request.POST, instance=request.user.privacy_settings)
 
         if form.is_valid():
             form.save()

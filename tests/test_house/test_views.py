@@ -9,7 +9,9 @@ class HouseViewsTestCase(TestCase):
 
     def setUp(self) -> None:
         self.test_users = get_or_create_test_users(3)
-        self.client.login(username=self.test_users[0].username, password=TEST_PASSWORD)
+        self.client.login(
+            username=self.test_users[0].username,
+            password=TEST_PASSWORD)
 
     def test_dashboard_view(self):
         url = reverse('dashboard')

@@ -7,6 +7,7 @@ def home(request):
 
     return render(request, 'library/home.html.django')
 
+
 def legacy(request):
     """ The legacy view displays legacy mentions. """
 

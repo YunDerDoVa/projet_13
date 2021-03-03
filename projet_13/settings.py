@@ -13,6 +13,9 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 import os
 import django_heroku
 
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -98,7 +101,8 @@ DB_LABEL = os.getenv('DB_LABEL', 'SQLITE')
 if DB_LABEL == 'MYSQL':
     # database for MySQL
     pass
-else: # (if DB_LABEL == 'SQLITE')
+else:
+    # (if DB_LABEL == 'SQLITE')
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
@@ -161,14 +165,10 @@ if not DEBUG:
     pass
 
 # Sentry
-import sentry_sdk
-from sentry_sdk.integrations.django import DjangoIntegration
-
 sentry_sdk.init(
     dsn="https://9a4e31bf536b4f19939c46da06948138@o419717.ingest.sentry.io/5400396",
     integrations=[DjangoIntegration()],
-    traces_sample_rate = 1.0,
-
+    traces_sample_rate=1.0,
     # If you wish to associate users to errors (assuming you are using
     # django.contrib.auth) you may enable sending PII data.
     send_default_pii=True

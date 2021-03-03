@@ -32,7 +32,7 @@ def like_post(request, post_id, like_from_id):
         'like': True,
     }
 
-    return redirect(request.GET['next']+'#post'+str(post.id))
+    return redirect(request.GET['next'] + '#post' + str(post.id))
 
     return JsonResponse(json)
 
@@ -63,6 +63,6 @@ def dislike_post(request, post_id, like_from_id):
         'like': False,
     }
 
-    return redirect(request.GET['next']+'#post'+str(post.id))
+    return redirect(request.GET['next'] + '#post' + str(post.id))
 
     return JsonResponse(json)

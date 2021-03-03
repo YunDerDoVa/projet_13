@@ -73,7 +73,8 @@ class TableModelsTestCase(TestCase):
         user_post = self.test_users[0]
         user_comment = self.test_users[1]
         post = TablePost.objects.filter(user=user_post).first()
-        comment = TableComment.objects.create(post=post, comment_from=user_comment, comment=str_comment)
+        comment = TableComment.objects.create(
+            post=post, comment_from=user_comment, comment=str_comment)
 
         self.assertEqual(comment.comment, str_comment)
         self.assertEqual(comment.post, post)

@@ -44,7 +44,9 @@ class TableViewsTestCase(TestCase):
 
     def test_publish_view(self):
         url = reverse('table_publish')
-        self.client.login(username=self.test_users[1].username, password=TEST_PASSWORD)
+        self.client.login(
+            username=self.test_users[1].username,
+            password=TEST_PASSWORD)
         response = self.client.get(url)
 
         self.assertTemplateUsed(response, 'base.html.django')

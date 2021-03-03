@@ -12,7 +12,7 @@ class TablePostAdmin(admin.ModelAdmin):
 
 class TableLikeAdmin(admin.ModelAdmin):
     """ TablePost's admin model. """
-    
+
     model = TableLike
 
 

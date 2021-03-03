@@ -6,7 +6,11 @@ from django.contrib.auth.models import AbstractUser, UserManager
 class Privacy(models.Model):
     """ Privacy settings model. """
 
-    user = models.OneToOneField('User', on_delete=models.CASCADE, null=True, related_name='privacy_settings')
+    user = models.OneToOneField(
+        'User',
+        on_delete=models.CASCADE,
+        null=True,
+        related_name='privacy_settings')
     private_profile = models.BooleanField(default=False)
     private_posts = models.BooleanField(default=False)
 
@@ -32,7 +36,8 @@ class User(AbstractUser):
         - (Ergonomy)
         - (Security) """
 
-        user = User.objects.create_user(username=username, email=email, password=password)
+        user = User.objects.create_user(
+            username=username, email=email, password=password)
         Privacy.objects.create(user=user)
 
         return user

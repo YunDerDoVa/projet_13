@@ -13,7 +13,10 @@ class UserManager(UserManager):
         - (Ergonomy)
         - (Security) """
 
-        user = self.create_user(username=username, email=email, password=password)
+        user = self.create_user(
+            username=username,
+            email=email,
+            password=password)
         Privacy.objects.create(user=user)
 
         return user

@@ -34,7 +34,7 @@ def my_likes(request):
     """ The 'my_likes' view displays all posts we liked on the website. """
 
     posts = TablePost.objects.filter(table_like_set__like_from=request.user,
-        table_like_set__like=True)
+                                     table_like_set__like=True)
 
     for post in posts:
         post.is_liked = True

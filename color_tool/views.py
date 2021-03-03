@@ -22,7 +22,10 @@ def screen(request):
     r = requests.get(url)
     data = r.json()
 
-    text_color = request.GET.get('text', data.get('contrast', {'value': 'white'})['value'])
+    text_color = request.GET.get(
+        'text', data.get(
+            'contrast', {
+                'value': 'white'})['value'])
     text_background_color = request.GET.get('text_background_color', 'none')
 
     context = {
